@@ -2,6 +2,7 @@ package com.comfortdelivery.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -22,17 +23,34 @@ public class Order {
     @Column(name = "delivery_date")
     private Date deliveryDate;
 
-    //TODO Статус заказа с джионом на status_ref
-    private String status;
+    @Column(name = "status")
+    private long status;
 
     @Column(name = "delivery_address")
     private String address;
 
-    //TODO заказчик
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                          CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "customer_id")
     private Customer customer;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "ordered_products",
+               joinColumns = @JoinColumn(name = "order_id"),
+               inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> products;
 
     public long getOrderId() {
         return orderId;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     public void setOrderId(long orderId) {
@@ -63,11 +81,11 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
-    public String getStatus() {
+    public long getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(long status) {
         this.status = status;
     }
 
@@ -85,5 +103,10 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public String getStatusAsString() {
+        //Todo маппинг по сути, может какой-другой вариант есть?;
+        return null;
     }
 }

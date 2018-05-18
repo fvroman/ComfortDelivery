@@ -27,8 +27,10 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
-    //TODO MANY TO MANY
-    private List<String> orders;
+    @OneToMany(mappedBy = "customer",
+               cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                          CascadeType.DETACH, CascadeType.REFRESH})
+    private List<Order> orders;
 
     public long getCustomerId() {
         return customerId;
@@ -78,11 +80,11 @@ public class Customer {
         this.address = address;
     }
 
-    public List<String> getOrders() {
+    public List<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<String> orders) {
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 }

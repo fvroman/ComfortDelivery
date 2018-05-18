@@ -1,6 +1,7 @@
 package com.comfortdelivery.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -17,6 +18,20 @@ public class Product {
 
     @Column(name = "price")
     private long price;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id")
+    private List<Feature> features;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "ordered_products",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "order_id"))
+    private List<Order> orders;
+
+    //todo Это еще вопрос
+    private String subCategory;
 
     public long getProductId() {
         return productId;
@@ -40,6 +55,14 @@ public class Product {
 
     public void setPrice(long price) {
         this.price = price;
+    }
+
+    public List<Feature> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(List<Feature> features) {
+        this.features = features;
     }
 
     @Override

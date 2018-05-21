@@ -30,15 +30,11 @@ public class Product {
             inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<Order> orders;
 
-    //todo Это еще вопрос
-    private String subCategory;
+
+    //private SubCategory subCategory;
 
     public long getProductId() {
         return productId;
-    }
-
-    public void setProductId(long productId) {
-        this.productId = productId;
     }
 
     public String getProductName() {

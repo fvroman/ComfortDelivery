@@ -1,6 +1,7 @@
 package com.comfortdelivery.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -108,5 +109,16 @@ public class Order {
     public String getStatusAsString() {
         //Todo маппинг по сути, может какой-другой вариант есть?;
         return null;
+    }
+
+    public void addProduct(Product product) {
+        if (products == null) {
+            products = new ArrayList<>();
+        }
+        products.add(product);
+    }
+
+    public void removeProduct(Product product) {
+        //todo когда буду делать корзину
     }
 }

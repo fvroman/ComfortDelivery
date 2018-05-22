@@ -3,8 +3,8 @@ package com.comfortdelivery.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "subCategories")
-public class SubCategory {
+@Table(name = "subcategories")
+public class Subcategory {
     @Id
     @Column(name = "subcategory_id")
     private long subcategoryId;

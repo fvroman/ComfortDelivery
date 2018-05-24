@@ -1,9 +1,6 @@
-<%@tag description="search panel and order bin together" pageEncoding="UTF-8" %>
-<div id="search-and-order" style="position:relative">
-    <div id="search-panel">
-        test
-    </div>
-    <div id="order-bin">
-
-    </div>
+<%@tag description="search-panel" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<div style="position:relative">
+    <t:search/>
+    <t:order/>
 </div>

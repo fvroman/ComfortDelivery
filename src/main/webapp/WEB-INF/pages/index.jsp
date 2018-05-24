@@ -9,13 +9,8 @@
     <title>Уют - доставка в п.Октябрьский и д.Чунояр</title>
 </head>
 <t:generic-page>
-    <jsp:attribute name="header">
-    </jsp:attribute>
-    <jsp:attribute name="footer">
-        А ты мне скажешь - я так ждала тебя вова
-    </jsp:attribute>
     <jsp:body>
-        <t:search/>
+        <t:search-and-order/>
         <form:form method="GET">
             <table>
                 <c:forEach var="category" items="${categories}" varStatus="loop">
@@ -31,7 +26,7 @@
                                 <h4>${category.title}</h4>
                                 <hr>
                                 <c:forEach var="subcategory" items="${category.subcategories}">
-                                <span>
+                                <span class="subcategory-title">
                                     <c:out value="${subcategory.subcategoryName}"/>
                                 </span>
                                     <br>

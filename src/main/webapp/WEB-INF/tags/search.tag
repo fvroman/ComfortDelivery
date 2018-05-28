@@ -7,7 +7,7 @@
         <button type="reset" class="category-selector">
             <i class="fa fa-times"></i> Категории
         </button>
-        <input type="text" title="hello" class="search-form" class="search-form"/>
-        <input type="submit" title="Искать" class="submit-search-button"/>
+        <input type="text" title="hello" class="search-form" placeholder="Что ищем?" class="search-form"/>
+        <input type="submit" value="Искать" class="submit-search-button"/>
     </div>
 </div>

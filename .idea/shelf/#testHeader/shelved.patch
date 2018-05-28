@@ -1,0 +1,775 @@
+Index: src/main/webapp/META-INF/context.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/META-INF/context.xml	(date 1526970982355)
++++ src/main/webapp/META-INF/context.xml	(date 1526970982355)
+@@ -0,0 +1,3 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<Context path="/">
++</Context>
+Index: src/main/webapp/WEB-INF/tags/generic-page.tag
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/WEB-INF/tags/generic-page.tag	(date 1526980848027)
++++ src/main/webapp/WEB-INF/tags/generic-page.tag	(date 1526980848027)
+@@ -0,0 +1,26 @@
++<%@tag description="Page template" pageEncoding="UTF-8"%>
++<%@attribute name="header" fragment="true" %>
++<%@attribute name="footer" fragment="true" %>
++<html>
++<link type="text/css" rel = "stylesheet" href="${pageContext.request.contextPath}/resources/css/generic-page.css">
++<body>
++<div id="pageheader">
++    <!--TODO Это подлежит рефакторингу, когда сделаю соотв.класс-->
++    <div style="position:relative">
++        <img src="${pageContext.request.contextPath}/resources/images/comfort-header.jpg" alt = "Уют">
++        <ul>
++            <li>Главная</li>
++            <li>Доставка и оплата</li>
++            <li>Контакты</li>
++            <li>Регистрация/Вход</li>
++        </ul>
++    </div>
++</div>
++<div id="body">
++    <jsp:doBody/>
++</div>
++<div id="pagefooter">
++    <jsp:invoke fragment="footer"/>
++</div>
++</body>
++</html>
+\ No newline at end of file
+Index: src/main/webapp/resources/css/generic-page.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/resources/css/generic-page.css	(date 1526980077558)
++++ src/main/webapp/resources/css/generic-page.css	(date 1526980077558)
+@@ -0,0 +1,26 @@
++body{
++    background-color:lightgray;
++    margin: 0;
++    padding: 0;
++}
++
++ul {
++    background: white;
++    width: 540px;
++    position: absolute;
++    left: 0;
++    right: 0;
++    top: 30px;
++    margin-left: auto;
++    margin-right: auto;
++    border-top-right-radius: 10px;
++    border-top-left-radius: 10px;
++}
++
++ul li {
++    display: inline-block;
++    font-size: 18px;
++    color: sandybrown;
++    padding: 10px;
++}
++
+Index: sqlScripts/subcategories1.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sqlScripts/subcategories1.sql	(date 1526965251807)
++++ sqlScripts/subcategories1.sql	(date 1526965251807)
+@@ -0,0 +1,45 @@
++--TV--
++INSERT INTO SUBCATEGORIES VALUES (1, '??????????', 1);
++INSERT INTO SUBCATEGORIES VALUES (2, 'DVD ??????', 1);
++INSERT INTO SUBCATEGORIES VALUES (3, '???????? ??????????', 1);
++INSERT INTO SUBCATEGORIES VALUES (4, '??????????? ??????', 1);
++INSERT INTO SUBCATEGORIES VALUES (5, '?????????', 1);
++
++--???????? ???????--
++INSERT INTO SUBCATEGORIES VALUES (51, '????????????', 2);
++INSERT INTO SUBCATEGORIES VALUES (52, '???????? ?????', 2);
++INSERT INTO SUBCATEGORIES VALUES (53, '????????????? ??????', 2);
++INSERT INTO SUBCATEGORIES VALUES (54, '???????', 2);
++INSERT INTO SUBCATEGORIES VALUES (55, '????????????? ????', 2);
++INSERT INTO SUBCATEGORIES VALUES (56, '???????????', 2);
++INSERT INTO SUBCATEGORIES VALUES (57, '???????????? ???????', 2);
++
++--??????? ??? ????--
++INSERT INTO SUBCATEGORIES VALUES (101, '?????????? ??????', 3);
++INSERT INTO SUBCATEGORIES VALUES (102, '????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (103, '????????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (104, '????????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (105, '???????????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (106, '??????? ??????', 3);
++
++--?????????? ? ??????????--
++INSERT INTO SUBCATEGORIES VALUES (251, '????????? ?????', 4);
++INSERT INTO SUBCATEGORIES VALUES (252, '????????', 4);
++INSERT INTO SUBCATEGORIES VALUES (253, '????????', 4);
++INSERT INTO SUBCATEGORIES VALUES (254, '????????', 4);
++INSERT INTO SUBCATEGORIES VALUES (255, '???????', 4);
++INSERT INTO SUBCATEGORIES VALUES (256, '????????? ??????????/????', 4);
++
++--??????? ???????--
++INSERT INTO SUBCATEGORIES VALUES (151, '?????????', 5);
++INSERT INTO SUBCATEGORIES VALUES (152, '????????', 5);
++INSERT INTO SUBCATEGORIES VALUES (153, '???? ? ?????', 5);
++INSERT INTO SUBCATEGORIES VALUES (154, '???????', 5);
++INSERT INTO SUBCATEGORIES VALUES (155, '??????????? ?????', 5);
++
++--???????-????????????--
++INSERT INTO SUBCATEGORIES VALUES (201, '?????????????', 6);
++INSERT INTO SUBCATEGORIES VALUES (202, '??????????', 6);
++INSERT INTO SUBCATEGORIES VALUES (203, '??????', 6);
++INSERT INTO SUBCATEGORIES VALUES (204, '??????????', 6);
++INSERT INTO SUBCATEGORIES VALUES (205, '??????????', 6);
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ArtifactsWorkspaceSettings\">\n    <artifacts-to-build>\n      <artifact name=\"Comfort:war exploded\" />\n    </artifacts-to-build>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c9dec990-1591-44bd-9045-91b994f97898\" name=\"Default\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Comfort.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Comfort.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/SubCategory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Subcategory.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/Comfort/WEB-INF/classes/com/comfortdelivery/controller/IndexController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/Comfort/WEB-INF/classes/com/comfortdelivery/controller/IndexController.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/Comfort/WEB-INF/pages/index.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/Comfort/WEB-INF/pages/index.jsp\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/comfortdelivery/controller/IndexController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/comfortdelivery/controller/IndexController.class\" afterDir=\"false\" />\n    </list>\n    <ignored path=\"$PROJECT_DIR$/out/\" />\n    <ignored path=\"$PROJECT_DIR$/target/\" />\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\n    <option name=\"TRACKING_ENABLED\" value=\"true\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileEditorManager\">\n    <leaf SIDE_TABS_SIZE_LIMIT_KEY=\"300\">\n      <file leaf-file-name=\"index.jsp\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"85\">\n              <caret line=\"17\" column=\"29\" lean-forward=\"true\" selection-start-line=\"17\" selection-start-column=\"29\" selection-end-line=\"17\" selection-end-column=\"29\" />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"comfort-header.jpg\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/webapp/resources/images/comfort-header.jpg\">\n          <provider selected=\"true\" editor-type-id=\"images\" />\n        </entry>\n      </file>\n      <file leaf-file-name=\"pom.xml\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/pom.xml\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"221\">\n              <caret line=\"159\" selection-start-line=\"159\" selection-end-line=\"159\" />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"generic-page.tag\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/generic-page.tag\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state>\n              <caret line=\"3\" selection-start-line=\"3\" selection-end-line=\"3\" />\n              <folding>\n                <element signature=\"n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"search-and-order.tag\" pinned=\"false\" current-in-tab=\"true\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"51\">\n              <caret line=\"3\" column=\"12\" selection-start-line=\"3\" selection-start-column=\"12\" selection-end-line=\"3\" selection-end-column=\"12\" />\n              <folding>\n                <element signature=\"n#style#0;n#div#0;n#body#0;n#html#0;n#!!top\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"generic-page.css\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/webapp/resources/css/generic-page.css\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"204\">\n              <caret line=\"18\" lean-forward=\"true\" selection-start-line=\"18\" selection-end-line=\"18\" />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"CategoryDao.java\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/CategoryDao.java\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"119\">\n              <caret line=\"7\" column=\"19\" selection-start-line=\"7\" selection-end-line=\"8\" />\n              <folding>\n                <element signature=\"imports\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"IndexController.java\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"138\">\n              <caret line=\"27\" column=\"8\" selection-start-line=\"27\" selection-start-column=\"8\" selection-end-line=\"27\" selection-end-column=\"8\" />\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"Category.java\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"170\">\n              <caret line=\"28\" column=\"44\" selection-start-line=\"28\" selection-start-column=\"44\" selection-end-line=\"28\" selection-end-column=\"44\" />\n              <folding>\n                <element signature=\"imports\" expanded=\"true\" />\n                <element signature=\"e#314#315#0\" expanded=\"true\" />\n                <element signature=\"e#342#343#0\" expanded=\"true\" />\n                <element signature=\"e#384#385#0\" expanded=\"true\" />\n                <element signature=\"e#413#414#0\" expanded=\"true\" />\n              </folding>\n            </state>\n          </provider>\n        </entry>\n      </file>\n      <file leaf-file-name=\"web.xml\" pinned=\"false\" current-in-tab=\"false\">\n        <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\">\n          <provider selected=\"true\" editor-type-id=\"text-editor\">\n            <state relative-caret-position=\"527\">\n              <caret line=\"40\" column=\"10\" lean-forward=\"true\" selection-start-line=\"40\" selection-start-column=\"10\" selection-end-line=\"40\" selection-end-column=\"10\" />\n            </state>\n          </provider>\n        </entry>\n      </file>\n    </leaf>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"FindInProjectRecents\">\n    <findStrings>\n      <find>setstatus</find>\n      <find>getStatus</find>\n      <find>jsp</find>\n    </findStrings>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"IdeDocumentHistory\">\n    <option name=\"CHANGED_PATHS\">\n      <list>\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/utils/ConnectionTester.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Characteristic.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Customer.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Feature.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/ProductDao.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/Product.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Order.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/ProductDaoImpl.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/ProductServiceImpl.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/SubCategory.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Product.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Subсategory.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Subcategory.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/CategoryDao.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/CategoryService.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/CategoryDaoImpl.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/CategoryServiceImpl.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/ConnectionTester.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\" />\n        <option value=\"$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/header.tag\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/resources/css/generic-page.css\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/generic-page.tag\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\" />\n        <option value=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"JsBuildToolGruntFileManager\" detection-done=\"true\" sorting=\"DEFINITION_ORDER\" />\n  <component name=\"JsBuildToolPackageJson\" detection-done=\"true\" sorting=\"DEFINITION_ORDER\" />\n  <component name=\"JsGulpfileManager\">\n    <detection-done>true</detection-done>\n    <sorting>DEFINITION_ORDER</sorting>\n  </component>\n  <component name=\"LogFilters\">\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\n    <option name=\"FILTER_INFO\" value=\"true\" />\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\n    <option name=\"CUSTOM_FILTER\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"mavenHome\" value=\"C:/Program Files (x86)/Maven\" />\n      </MavenGeneralSettings>\n    </option>\n    <option name=\"importingSettings\">\n      <MavenImportingSettings>\n        <option name=\"importAutomatically\" value=\"true\" />\n      </MavenImportingSettings>\n    </option>\n  </component>\n  <component name=\"NodePackageJsonFileManager\">\n    <packageJsonPaths />\n  </component>\n  <component name=\"ProjectFrameBounds\" extendedState=\"6\">\n    <option name=\"x\" value=\"343\" />\n    <option name=\"y\" value=\"10\" />\n    <option name=\"width\" value=\"1036\" />\n    <option name=\"height\" value=\"773\" />\n  </component>\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectView\">\n    <navigator proportions=\"\" version=\"1\">\n      <foldersAlwaysOnTop value=\"true\" />\n    </navigator>\n    <panes>\n      <pane id=\"AndroidView\" />\n      <pane id=\"ProjectPane\">\n        <subPane>\n          <expand>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"comfortdelivery\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"comfortdelivery\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"controller\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"comfortdelivery\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"dao\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"comfortdelivery\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"entity\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"java\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"comfortdelivery\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"service\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"resources\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"resources\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"css\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"resources\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"images\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"WEB-INF\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"WEB-INF\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"pages\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"Comfort\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"Comfort\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"webapp\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"WEB-INF\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"tags\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n          </expand>\n          <select />\n        </subPane>\n      </pane>\n      <pane id=\"Scope\" />\n      <pane id=\"PackagesPane\" />\n    </panes>\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/pom.xml\" />\n    <property name=\"nodejs_interpreter_path.stuck_in_default_project\" value=\"undefined stuck path\" />\n    <property name=\"nodejs_npm_path_reset_for_default_project\" value=\"true\" />\n    <property name=\"project.structure.last.edited\" value=\"Facets\" />\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\Roman\\IdeaProjects\\Comfort\\src\\main\\webapp\\WEB-INF\" />\n    </key>\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\Roman\\IdeaProjects\\Comfort\\src\\main\\webapp\\resources\\css\" />\n      <recent name=\"C:\\Users\\Roman\\IdeaProjects\\Comfort\\src\\main\\webapp\\WEB-INF\\pages\" />\n    </key>\n  </component>\n  <component name=\"RestoreUpdateTree\" date=\"Moments ago\" ActionInfo=\"_Update\">\n    <UpdatedFiles>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Updated from server\" />\n        <option name=\"myStatusName\" value=\"Changed on server\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"CHANGED_ON_SERVER\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Updated\" />\n          <option name=\"myStatusName\" value=\"Changed\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" value=\"UPDATED\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Created\" />\n          <option name=\"myStatusName\" value=\"Created\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" value=\"CREATED\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Deleted\" />\n          <option name=\"myStatusName\" value=\"Deleted\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"true\" />\n          <option name=\"myId\" value=\"REMOVED_FROM_REPOSITORY\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Restored\" />\n          <option name=\"myStatusName\" value=\"Will be restored\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" value=\"RESTORED\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Modified\" />\n        <option name=\"myStatusName\" value=\"Modified\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MODIFIED\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Skipped\" />\n        <option name=\"myStatusName\" value=\"Skipped\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"SKIPPED\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged with conflicts\" />\n        <option name=\"myStatusName\" value=\"Will be merged with conflicts\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED_WITH_CONFLICTS\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged with tree conflicts\" />\n        <option name=\"myStatusName\" value=\"Merged with tree conflicts\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED_WITH_TREE_CONFLICT\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged with property conflicts\" />\n        <option name=\"myStatusName\" value=\"Will be merged with property conflicts\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED_WITH_PROPERTY_CONFLICT\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged\" />\n        <option name=\"myStatusName\" value=\"Will be merged\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Not in repository\" />\n        <option name=\"myStatusName\" value=\"Not in repository\" />\n        <option name=\"mySupportsDeletion\" value=\"true\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"UNKNOWN\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Locally added\" />\n        <option name=\"myStatusName\" value=\"Locally added\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"LOCALLY_ADDED\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Locally removed\" />\n        <option name=\"myStatusName\" value=\"Locally removed\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"LOCALLY_REMOVED\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Switched\" />\n        <option name=\"myStatusName\" value=\"Switched\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"SWITCHED\" />\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Updated from server\" />\n        <option name=\"myStatusName\" value=\"Changed on server\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"CHANGED_ON_SERVER\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Updated\" />\n          <option name=\"myStatusName\" value=\"Changed\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" value=\"UPDATED\" />\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Customer.java</PATH>\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Order.java</PATH>\n          <PATH vcs=\"Git\" revision=\"\">$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Product.java</PATH>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Created\" />\n          <option name=\"myStatusName\" value=\"Created\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" value=\"CREATED\" />\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Deleted\" />\n          <option name=\"myStatusName\" value=\"Deleted\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"true\" />\n          <option name=\"myId\" value=\"REMOVED_FROM_REPOSITORY\" />\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" value=\"Restored\" />\n          <option name=\"myStatusName\" value=\"Will be restored\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" value=\"RESTORED\" />\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n          <FILE-GROUP>\n            <option name=\"myUpdateName\" />\n            <option name=\"myStatusName\" />\n            <option name=\"mySupportsDeletion\" value=\"false\" />\n            <option name=\"myCanBeAbsent\" value=\"false\" />\n            <option name=\"myId\" />\n          </FILE-GROUP>\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Modified\" />\n        <option name=\"myStatusName\" value=\"Modified\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MODIFIED\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Skipped\" />\n        <option name=\"myStatusName\" value=\"Skipped\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"SKIPPED\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged with conflicts\" />\n        <option name=\"myStatusName\" value=\"Will be merged with conflicts\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED_WITH_CONFLICTS\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged with tree conflicts\" />\n        <option name=\"myStatusName\" value=\"Merged with tree conflicts\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED_WITH_TREE_CONFLICT\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged with property conflicts\" />\n        <option name=\"myStatusName\" value=\"Will be merged with property conflicts\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED_WITH_PROPERTY_CONFLICT\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Merged\" />\n        <option name=\"myStatusName\" value=\"Will be merged\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"MERGED\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Not in repository\" />\n        <option name=\"myStatusName\" value=\"Not in repository\" />\n        <option name=\"mySupportsDeletion\" value=\"true\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"UNKNOWN\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Locally added\" />\n        <option name=\"myStatusName\" value=\"Locally added\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"LOCALLY_ADDED\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Locally removed\" />\n        <option name=\"myStatusName\" value=\"Locally removed\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"LOCALLY_REMOVED\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n      <FILE-GROUP>\n        <option name=\"myUpdateName\" value=\"Switched\" />\n        <option name=\"myStatusName\" value=\"Switched\" />\n        <option name=\"mySupportsDeletion\" value=\"false\" />\n        <option name=\"myCanBeAbsent\" value=\"false\" />\n        <option name=\"myId\" value=\"SWITCHED\" />\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n        <FILE-GROUP>\n          <option name=\"myUpdateName\" />\n          <option name=\"myStatusName\" />\n          <option name=\"mySupportsDeletion\" value=\"false\" />\n          <option name=\"myCanBeAbsent\" value=\"false\" />\n          <option name=\"myId\" />\n        </FILE-GROUP>\n      </FILE-GROUP>\n    </UpdatedFiles>\n  </component>\n  <component name=\"RunDashboard\">\n    <option name=\"ruleStates\">\n      <list>\n        <RuleState>\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\n        </RuleState>\n        <RuleState>\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\n        </RuleState>\n      </list>\n    </option>\n  </component>\n  <component name=\"RunManager\" selected=\"Tomcat Server.MyTommyCat\">\n    <configuration name=\"ConnectionTester (1)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.comfortdelivery.ConnectionTester\" />\n      <module name=\"Comfort\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.comfortdelivery.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n    </configuration>\n    <configuration name=\"ConnectionTester\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.comfortdelivery.utils.ConnectionTester\" />\n      <module name=\"Comfort\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.comfortdelivery.utils.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n    </configuration>\n    <configuration default=\"true\" type=\"Application\" factoryName=\"Application\">\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n    </configuration>\n    <configuration default=\"true\" type=\"JUnit\" factoryName=\"JUnit\">\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"false\" />\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\n      <option name=\"PACKAGE_NAME\" />\n      <option name=\"MAIN_CLASS_NAME\" />\n      <option name=\"METHOD_NAME\" />\n      <option name=\"TEST_OBJECT\" value=\"class\" />\n      <option name=\"VM_PARAMETERS\" value=\"-ea\" />\n      <option name=\"PARAMETERS\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"%MODULE_WORKING_DIR%\" />\n      <option name=\"PASS_PARENT_ENVS\" value=\"true\" />\n      <option name=\"TEST_SEARCH_SCOPE\">\n        <value defaultName=\"singleModule\" />\n      </option>\n      <patterns />\n    </configuration>\n    <configuration default=\"true\" type=\"TestNG\" factoryName=\"TestNG\">\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"false\" />\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\n      <option name=\"SUITE_NAME\" />\n      <option name=\"PACKAGE_NAME\" />\n      <option name=\"MAIN_CLASS_NAME\" />\n      <option name=\"METHOD_NAME\" />\n      <option name=\"GROUP_NAME\" />\n      <option name=\"TEST_OBJECT\" value=\"CLASS\" />\n      <option name=\"VM_PARAMETERS\" value=\"-ea\" />\n      <option name=\"PARAMETERS\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"%MODULE_WORKING_DIR%\" />\n      <option name=\"OUTPUT_DIRECTORY\" />\n      <option name=\"PASS_PARENT_ENVS\" value=\"true\" />\n      <option name=\"TEST_SEARCH_SCOPE\">\n        <value defaultName=\"singleModule\" />\n      </option>\n      <option name=\"USE_DEFAULT_REPORTERS\" value=\"false\" />\n      <option name=\"PROPERTIES_FILE\" />\n      <properties />\n      <listeners />\n    </configuration>\n    <configuration name=\"MyTommyCat\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.7\" ALTERNATIVE_JRE_ENABLED=\"false\">\n      <option name=\"UPDATING_POLICY\" value=\"redeploy-artifacts\" />\n      <deployment>\n        <artifact name=\"Comfort:war exploded\">\n          <settings>\n            <option name=\"CONTEXT_PATH\" value=\"/\" />\n          </settings>\n        </artifact>\n      </deployment>\n      <server-settings>\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"Unnamed_Comfort\" />\n      </server-settings>\n      <predefined_log_file id=\"Tomcat\" enabled=\"true\" />\n      <predefined_log_file id=\"Tomcat Catalina\" enabled=\"true\" />\n      <predefined_log_file id=\"Tomcat Manager\" enabled=\"false\" />\n      <predefined_log_file id=\"Tomcat Host Manager\" enabled=\"false\" />\n      <predefined_log_file id=\"Tomcat Localhost Access\" enabled=\"false\" />\n      <RunnerSettings RunnerId=\"Debug\">\n        <option name=\"DEBUG_PORT\" value=\"6474\" />\n      </RunnerSettings>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\n        <STARTUP>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </STARTUP>\n        <SHUTDOWN>\n          <option name=\"USE_DEFAULT\" value=\"true\" />\n          <option name=\"SCRIPT\" value=\"\" />\n          <option name=\"VM_PARAMETERS\" value=\"\" />\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\n        </SHUTDOWN>\n      </ConfigurationWrapper>\n      <method>\n        <option name=\"BuildArtifacts\" enabled=\"true\">\n          <artifact name=\"Comfort:war exploded\" />\n        </option>\n      </method>\n    </configuration>\n    <list>\n      <item itemvalue=\"Tomcat Server.MyTommyCat\" />\n      <item itemvalue=\"Application.ConnectionTester\" />\n      <item itemvalue=\"Application.ConnectionTester (1)\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.ConnectionTester (1)\" />\n        <item itemvalue=\"Application.ConnectionTester\" />\n        <item itemvalue=\"Application.ConnectionTester\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SvnConfiguration\">\n    <configuration />\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c9dec990-1591-44bd-9045-91b994f97898\" name=\"Default\" comment=\"\" />\n      <created>1526557251207</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1526557251207</updated>\n      <workItem from=\"1526557273062\" duration=\"6164000\" />\n      <workItem from=\"1526892400478\" duration=\"5802000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"#addedSomeMappings\">\n      <created>1526636345182</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1526636345183</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"2\" />\n    <servers />\n  </component>\n  <component name=\"TimeTrackingManager\">\n    <option name=\"totallyTimeSpent\" value=\"33364000\" />\n  </component>\n  <component name=\"TodoView\">\n    <todo-panel id=\"selected-file\">\n      <is-autoscroll-to-source value=\"true\" />\n    </todo-panel>\n    <todo-panel id=\"all\">\n      <are-packages-shown value=\"true\" />\n      <is-autoscroll-to-source value=\"true\" />\n    </todo-panel>\n  </component>\n  <component name=\"ToolWindowManager\">\n    <frame x=\"-8\" y=\"-8\" width=\"1382\" height=\"784\" extended-state=\"6\" />\n    <editor active=\"true\" />\n    <layout>\n      <window_info anchor=\"right\" id=\"Palette\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"10\" side_tool=\"true\" />\n      <window_info anchor=\"bottom\" id=\"Application Servers\" order=\"10\" weight=\"0.3297546\" />\n      <window_info anchor=\"right\" id=\"Maven Projects\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"10\" show_stripe_button=\"false\" />\n      <window_info id=\"Capture Tool\" order=\"5\" />\n      <window_info id=\"Designer\" order=\"5\" />\n      <window_info anchor=\"right\" id=\"Database\" order=\"6\" />\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\n      <window_info id=\"UI Designer\" order=\"5\" />\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.4\" />\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Messages\" order=\"10\" weight=\"0.3082822\" />\n      <window_info anchor=\"right\" id=\"Palette&#9;\" order=\"6\" />\n      <window_info id=\"Image Layers\" order=\"5\" />\n      <window_info anchor=\"bottom\" id=\"Java Enterprise\" order=\"10\" />\n      <window_info anchor=\"right\" id=\"Capture Analysis\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"10\" weight=\"0.3297546\" />\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" visible=\"true\" weight=\"0.48466256\" />\n      <window_info anchor=\"bottom\" id=\"Spring\" order=\"10\" />\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"10\" />\n      <window_info active=\"true\" content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.25340393\" />\n      <window_info anchor=\"right\" id=\"Bean Validation\" order=\"6\" />\n      <window_info id=\"Web\" order=\"5\" side_tool=\"true\" />\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" weight=\"0.3297546\" />\n      <window_info anchor=\"right\" id=\"Theme Preview\" order=\"6\" />\n      <window_info id=\"Favorites\" order=\"5\" side_tool=\"true\" />\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" visible=\"true\" weight=\"0.20705521\" />\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\n      <window_info active=\"true\" content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.24962178\" />\n      <window_info id=\"Favorites\" order=\"5\" side_tool=\"true\" />\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\n      <window_info anchor=\"bottom\" id=\"Java Enterprise\" order=\"10\" />\n      <window_info anchor=\"bottom\" id=\"Event Log\" order=\"10\" side_tool=\"true\" />\n      <window_info anchor=\"right\" id=\"Theme Preview\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Terminal\" order=\"10\" />\n      <window_info anchor=\"bottom\" id=\"Application Servers\" order=\"10\" weight=\"0.3297546\" />\n      <window_info anchor=\"right\" id=\"Palette\" order=\"6\" />\n      <window_info anchor=\"right\" id=\"Palette&#9;\" order=\"6\" />\n      <window_info anchor=\"right\" id=\"Maven Projects\" order=\"6\" />\n      <window_info id=\"Web\" order=\"5\" side_tool=\"true\" />\n      <window_info anchor=\"bottom\" id=\"Database Changes\" order=\"10\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Spring\" order=\"10\" />\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\n      <window_info id=\"Image Layers\" order=\"5\" />\n      <window_info anchor=\"right\" id=\"Bean Validation\" order=\"6\" />\n      <window_info id=\"Persistence\" order=\"7\" side_tool=\"true\" />\n      <window_info anchor=\"right\" id=\"Database\" order=\"6\" />\n      <window_info id=\"Capture Tool\" order=\"5\" />\n      <window_info anchor=\"bottom\" id=\"Version Control\" order=\"10\" weight=\"0.3297546\" />\n      <window_info anchor=\"right\" id=\"Capture Analysis\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" />\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\n      <window_info id=\"UI Designer\" order=\"5\" />\n      <window_info anchor=\"bottom\" id=\"Debug\" order=\"3\" weight=\"0.4\" />\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\n      <window_info id=\"Designer\" order=\"5\" />\n    </layout>\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"1\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\n                <collection />\n              </option>\n              <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\n                <collection />\n              </option>\n              <option name=\"COLUMN_ORDER\">\n                <list>\n                  <option value=\"0\" />\n                  <option value=\"1\" />\n                  <option value=\"2\" />\n                  <option value=\"3\" />\n                </list>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsContentAnnotationSettings\">\n    <option name=\"myLimit\" value=\"2678400000\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"#addedSomeMappings\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"#addedSomeMappings\" />\n  </component>\n  <component name=\"editorHistoryManager\">\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/utils/ConnectionTester.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"85\">\n          <caret line=\"5\" selection-start-line=\"5\" selection-end-line=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/pom.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"2040\">\n          <caret line=\"120\" selection-start-line=\"120\" selection-end-line=\"120\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"193\">\n          <caret line=\"21\" column=\"19\" selection-start-line=\"21\" selection-start-column=\"19\" selection-end-line=\"21\" selection-end-column=\"19\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"58\">\n          <caret line=\"22\" column=\"26\" selection-start-line=\"22\" selection-start-column=\"26\" selection-end-line=\"22\" selection-end-column=\"26\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"187\">\n          <caret line=\"13\" lean-forward=\"true\" selection-start-line=\"13\" selection-end-line=\"13\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"85\">\n          <caret line=\"5\" lean-forward=\"true\" selection-start-line=\"5\" selection-end-line=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/pom.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"2040\">\n          <caret line=\"120\" selection-start-line=\"120\" selection-end-line=\"120\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"85\">\n          <caret line=\"5\" lean-forward=\"true\" selection-start-line=\"5\" selection-end-line=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"357\">\n          <caret line=\"21\" column=\"18\" selection-start-line=\"21\" selection-start-column=\"18\" selection-end-line=\"21\" selection-end-column=\"18\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"306\">\n          <caret line=\"24\" column=\"34\" lean-forward=\"true\" selection-start-line=\"24\" selection-start-column=\"34\" selection-end-line=\"24\" selection-end-column=\"34\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"204\">\n          <caret line=\"12\" column=\"1\" lean-forward=\"true\" selection-start-line=\"12\" selection-start-column=\"1\" selection-end-line=\"12\" selection-end-column=\"1\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Order.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Customer.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Product.java\" />\n    <entry file=\"file://$PROJECT_DIR$/pom.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"332\">\n          <caret line=\"116\" column=\"38\" lean-forward=\"true\" selection-start-line=\"116\" selection-start-column=\"38\" selection-end-line=\"116\" selection-end-column=\"38\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"357\">\n          <caret line=\"21\" column=\"18\" selection-start-line=\"21\" selection-start-column=\"18\" selection-end-line=\"21\" selection-end-column=\"18\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"408\">\n          <caret line=\"24\" column=\"34\" selection-start-line=\"24\" selection-start-column=\"34\" selection-end-line=\"24\" selection-end-column=\"34\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"136\">\n          <caret line=\"12\" column=\"1\" selection-start-line=\"12\" selection-start-column=\"1\" selection-end-line=\"12\" selection-end-column=\"1\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/utils/ConnectionTester.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"85\">\n          <caret line=\"5\" selection-start-line=\"5\" selection-end-line=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/pom.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"2040\">\n          <caret line=\"120\" selection-start-line=\"120\" selection-end-line=\"120\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"193\">\n          <caret line=\"21\" column=\"19\" selection-start-line=\"21\" selection-start-column=\"19\" selection-end-line=\"21\" selection-end-column=\"19\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"58\">\n          <caret line=\"22\" column=\"26\" selection-start-line=\"22\" selection-start-column=\"26\" selection-end-line=\"22\" selection-end-column=\"26\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"187\">\n          <caret line=\"13\" lean-forward=\"true\" selection-start-line=\"13\" selection-end-line=\"13\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"85\">\n          <caret line=\"5\" lean-forward=\"true\" selection-start-line=\"5\" selection-end-line=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/utils/ConnectionTester.java\" />\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Feature.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"284\">\n          <caret line=\"22\" column=\"5\" selection-start-line=\"22\" selection-start-column=\"5\" selection-end-line=\"22\" selection-end-column=\"5\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Customer.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"476\">\n          <caret line=\"29\" column=\"37\" selection-start-line=\"29\" selection-start-column=\"37\" selection-end-line=\"29\" selection-end-column=\"37\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Product.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"527\">\n          <caret line=\"32\" selection-start-line=\"32\" selection-end-line=\"32\" />\n          <folding>\n            <element signature=\"e#1295#1296#0\" expanded=\"true\" />\n            <element signature=\"e#1341#1342#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Order.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"748\">\n          <caret line=\"48\" selection-start-line=\"48\" selection-end-line=\"48\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/ProductDao.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"102\">\n          <caret line=\"6\" column=\"17\" selection-start-line=\"6\" selection-start-column=\"17\" selection-end-line=\"6\" selection-end-column=\"17\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/ProductDaoImpl.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"154\">\n          <caret line=\"20\" column=\"39\" lean-forward=\"true\" selection-start-line=\"20\" selection-start-column=\"39\" selection-end-line=\"20\" selection-end-column=\"39\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/CategoryService.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"119\">\n          <caret line=\"7\" column=\"35\" selection-start-line=\"7\" selection-start-column=\"35\" selection-end-line=\"7\" selection-end-column=\"35\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/CategoryServiceImpl.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"132\">\n          <caret line=\"21\" selection-start-line=\"21\" selection-end-line=\"21\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n            <element signature=\"e#430#431#0\" expanded=\"true\" />\n            <element signature=\"e#475#476#0\" expanded=\"true\" />\n            <element signature=\"e#543#544#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/ConnectionTester.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"153\">\n          <caret line=\"27\" column=\"45\" selection-start-line=\"27\" selection-start-column=\"45\" selection-end-line=\"27\" selection-end-column=\"45\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"18\">\n          <caret line=\"24\" column=\"34\" selection-start-line=\"24\" selection-start-column=\"34\" selection-end-line=\"24\" selection-end-column=\"34\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/CategoryDaoImpl.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"234\">\n          <caret line=\"23\" column=\"37\" lean-forward=\"true\" selection-start-line=\"23\" selection-start-column=\"37\" selection-end-line=\"23\" selection-end-column=\"37\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Subcategory.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"153\">\n          <caret line=\"12\" column=\"35\" lean-forward=\"true\" selection-start-line=\"12\" selection-start-column=\"35\" selection-end-line=\"12\" selection-end-column=\"35\" />\n          <folding>\n            <element signature=\"e#525#526#0\" expanded=\"true\" />\n            <element signature=\"e#561#562#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/ProductServiceImpl.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"211\">\n          <caret line=\"18\" column=\"7\" lean-forward=\"true\" selection-start-line=\"18\" selection-end-line=\"19\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/service/ProductService.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"119\">\n          <caret line=\"7\" column=\"32\" lean-forward=\"true\" selection-start-line=\"7\" selection-start-column=\"32\" selection-end-line=\"7\" selection-end-column=\"32\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/CategoryDao.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"119\">\n          <caret line=\"7\" column=\"19\" selection-start-line=\"7\" selection-end-line=\"8\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"138\">\n          <caret line=\"27\" column=\"8\" selection-start-line=\"27\" selection-start-column=\"8\" selection-end-line=\"27\" selection-end-column=\"8\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"170\">\n          <caret line=\"28\" column=\"44\" selection-start-line=\"28\" selection-start-column=\"44\" selection-end-line=\"28\" selection-end-column=\"44\" />\n          <folding>\n            <element signature=\"imports\" expanded=\"true\" />\n            <element signature=\"e#314#315#0\" expanded=\"true\" />\n            <element signature=\"e#342#343#0\" expanded=\"true\" />\n            <element signature=\"e#384#385#0\" expanded=\"true\" />\n            <element signature=\"e#413#414#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"527\">\n          <caret line=\"40\" column=\"10\" lean-forward=\"true\" selection-start-line=\"40\" selection-start-column=\"10\" selection-end-line=\"40\" selection-end-column=\"10\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/pom.xml\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"221\">\n          <caret line=\"159\" selection-start-line=\"159\" selection-end-line=\"159\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/resources/css/generic-page.css\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"204\">\n          <caret line=\"18\" lean-forward=\"true\" selection-start-line=\"18\" selection-end-line=\"18\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/resources/images/comfort-header.jpg\">\n      <provider selected=\"true\" editor-type-id=\"images\" />\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"85\">\n          <caret line=\"17\" column=\"29\" lean-forward=\"true\" selection-start-line=\"17\" selection-start-column=\"29\" selection-end-line=\"17\" selection-end-column=\"29\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/generic-page.tag\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state>\n          <caret line=\"3\" selection-start-line=\"3\" selection-end-line=\"3\" />\n          <folding>\n            <element signature=\"n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"51\">\n          <caret line=\"3\" column=\"12\" selection-start-line=\"3\" selection-start-column=\"12\" selection-end-line=\"3\" selection-end-column=\"12\" />\n          <folding>\n            <element signature=\"n#style#0;n#div#0;n#body#0;n#html#0;n#!!top\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n  </component>\n  <component name=\"masterDetails\">\n    <states>\n      <state key=\"ArtifactsStructureConfigurable.UI\">\n        <settings>\n          <artifact-editor />\n          <last-edited>Comfort:war</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n                <option value=\"0.5\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"FacetStructureConfigurable.UI\">\n        <settings>\n          <last-edited>Web (Comfort)|Web</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"GlobalLibrariesConfigurable.UI\">\n        <settings>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"JdkListConfigurable.UI\">\n        <settings>\n          <last-edited>1.8</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ModuleStructureConfigurable.UI\">\n        <settings>\n          <last-edited>Hibernate|Comfort</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ProjectJDKs.UI\">\n        <settings>\n          <last-edited>1.8</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n      <state key=\"ProjectLibrariesConfigurable.UI\">\n        <settings>\n          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>\n          <splitter-proportions>\n            <option name=\"proportions\">\n              <list>\n                <option value=\"0.2\" />\n              </list>\n            </option>\n          </splitter-proportions>\n        </settings>\n      </state>\n    </states>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision c46eda20f9a9e32e71acbe68aa13e046e51c5f37)
++++ .idea/workspace.xml	(date 1527062225207)
+@@ -7,16 +7,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="c9dec990-1591-44bd-9045-91b994f97898" name="Default" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Comfort.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Comfort.iml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/SubCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Subcategory.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/Comfort/WEB-INF/classes/com/comfortdelivery/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Comfort/WEB-INF/classes/com/comfortdelivery/controller/IndexController.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/Comfort/WEB-INF/pages/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Comfort/WEB-INF/pages/index.jsp" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/comfortdelivery/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/comfortdelivery/controller/IndexController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/Comfort/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Comfort/WEB-INF/web.xml" afterDir="false" />
+     </list>
+     <ignored path="$PROJECT_DIR$/out/" />
+     <ignored path="$PROJECT_DIR$/target/" />
+@@ -38,6 +30,24 @@
+           </provider>
+         </entry>
+       </file>
++      <file leaf-file-name="order.tag" pinned="false" current-in-tab="false">
++        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/order.tag">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="17">
++              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
++            </state>
++          </provider>
++        </entry>
++      </file>
++      <file leaf-file-name="search.tag" pinned="false" current-in-tab="true">
++        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search.tag">
++          <provider selected="true" editor-type-id="text-editor">
++            <state relative-caret-position="17">
++              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
++            </state>
++          </provider>
++        </entry>
++      </file>
+       <file leaf-file-name="comfort-header.jpg" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/comfort-header.jpg">
+           <provider selected="true" editor-type-id="images" />
+@@ -56,7 +66,7 @@
+         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/generic-page.tag">
+           <provider selected="true" editor-type-id="text-editor">
+             <state>
+-              <caret line="3" selection-start-line="3" selection-end-line="3" />
++              <caret column="28" selection-end-line="1" />
+               <folding>
+                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+               </folding>
+@@ -64,11 +74,11 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="search-and-order.tag" pinned="false" current-in-tab="true">
++      <file leaf-file-name="search-and-order.tag" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="51">
+-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
++            <state relative-caret-position="85">
++              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+               <folding>
+                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+               </folding>
+@@ -85,27 +95,6 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="CategoryDao.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/dao/CategoryDao.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="119">
+-              <caret line="7" column="19" selection-start-line="7" selection-end-line="8" />
+-              <folding>
+-                <element signature="imports" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/controller/IndexController.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="138">
+-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+       <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/entity/Category.java">
+           <provider selected="true" editor-type-id="text-editor">
+@@ -187,6 +176,8 @@
+         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/generic-page.tag" />
+         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
+         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag" />
++        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search.tag" />
++        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/order.tag" />
+       </list>
+     </option>
+   </component>
+@@ -1332,11 +1323,18 @@
+       <option name="project" value="LOCAL" />
+       <updated>1526636345183</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="#testHeader">
++      <created>1526982240598</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1526982240598</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="33364000" />
++    <option name="totallyTimeSpent" value="34471000" />
+   </component>
+   <component name="TodoView">
+     <todo-panel id="selected-file">
+@@ -1349,7 +1347,6 @@
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+-    <editor active="true" />
+     <layout>
+       <window_info anchor="right" id="Palette" order="6" />
+       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+@@ -1447,17 +1444,10 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="#addedSomeMappings" />
+-    <option name="LAST_COMMIT_MESSAGE" value="#addedSomeMappings" />
++    <MESSAGE value="#testHeader" />
++    <option name="LAST_COMMIT_MESSAGE" value="#testHeader" />
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/src/main/java/com/comfortdelivery/utils/ConnectionTester.java" />
+-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="85">
+-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/pom.xml">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="2040">
+@@ -1801,26 +1791,40 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="85">
+           <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="85">
++          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
++          <folding>
++            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/generic-page.tag">
+       <provider selected="true" editor-type-id="text-editor">
+         <state>
+-          <caret line="3" selection-start-line="3" selection-end-line="3" />
++          <caret column="28" selection-end-line="1" />
+           <folding>
+             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search-and-order.tag">
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/order.tag">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="17">
++          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/search.tag">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="51">
+-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+-          <folding>
+-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+-          </folding>
++        <state relative-caret-position="17">
++          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+         </state>
+       </provider>
+     </entry>
+Index: src/main/webapp/WEB-INF/tags/search-and-order.tag
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/WEB-INF/tags/search-and-order.tag	(date 1527062225755)
++++ src/main/webapp/WEB-INF/tags/search-and-order.tag	(date 1527062225755)
+@@ -0,0 +1,9 @@
++<%@tag description="search panel and order bin together" pageEncoding="UTF-8" %>
++<div id="search-and-order" style="position:relative">
++    <div id="search-panel">
++        test
++    </div>
++    <div id="order-bin">
++
++    </div>
++</div>
+Index: Comfort.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"JAVA_MODULE\" version=\"4\">\n  <component name=\"FacetManager\">\n    <facet type=\"hibernate\" name=\"Hibernate\">\n      <configuration>\n        <datasource-map />\n        <naming-strategy-map />\n      </configuration>\n    </facet>\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Comfort.iml	(revision c46eda20f9a9e32e71acbe68aa13e046e51c5f37)
++++ Comfort.iml	(date 1526982284017)
+@@ -3,7 +3,9 @@
+   <component name="FacetManager">
+     <facet type="hibernate" name="Hibernate">
+       <configuration>
+-        <datasource-map />
++        <datasource-map>
++          <unit-entry name="sessionFactory" />
++        </datasource-map>
+         <naming-strategy-map />
+       </configuration>
+     </facet>
+Index: src/main/java/com/comfortdelivery/dao/CategoryDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/comfortdelivery/dao/CategoryDao.java	(date 1526968268990)
++++ src/main/java/com/comfortdelivery/dao/CategoryDao.java	(date 1526968268990)
+@@ -0,0 +1,10 @@
++package com.comfortdelivery.dao;
++
++import com.comfortdelivery.entity.Category;
++
++import java.util.List;
++
++public interface CategoryDao {
++    List<Category> getCategories();
++
++}
+Index: src/main/java/com/comfortdelivery/dao/CategoryDaoImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/comfortdelivery/dao/CategoryDaoImpl.java	(date 1526969592215)
++++ src/main/java/com/comfortdelivery/dao/CategoryDaoImpl.java	(date 1526969592215)
+@@ -0,0 +1,26 @@
++package com.comfortdelivery.dao;
++
++import com.comfortdelivery.entity.Category;
++import org.hibernate.Session;
++import org.hibernate.SessionFactory;
++import org.hibernate.query.Query;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Repository;
++
++import java.util.List;
++
++@Repository
++public class CategoryDaoImpl implements CategoryDao {
++
++    private SessionFactory sessionFactory;
++
++    CategoryDaoImpl(@Autowired SessionFactory sessionFactory) {
++        this.sessionFactory = sessionFactory;
++    }
++
++    public List<Category> getCategories() {
++        Session session = sessionFactory.getCurrentSession();
++        Query query = session.createQuery("from Category ", Category.class);
++        return query.getResultList();
++    }
++}
+Index: src/main/java/com/comfortdelivery/service/CategoryService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/comfortdelivery/service/CategoryService.java	(date 1526968268301)
++++ src/main/java/com/comfortdelivery/service/CategoryService.java	(date 1526968268301)
+@@ -0,0 +1,9 @@
++package com.comfortdelivery.service;
++
++import com.comfortdelivery.entity.Category;
++
++import java.util.List;
++
++public interface CategoryService {
++    List<Category> getCategories();
++}
+Index: target/Comfort/WEB-INF/web.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<web-app xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://xmlns.jcp.org/xml/ns/javaee\" xsi:schemaLocation=\"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd\" id=\"WebApp_ID\" version=\"3.1\">\n  <display-name>comfort-delivery</display-name>\n\n  <welcome-file-list>\n    <welcome-file>index.jsp</welcome-file>\n    <welcome-file>index.html</welcome-file>\n  </welcome-file-list>\n\n  <servlet>\n    <servlet-name>dispatcher</servlet-name>\n    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>\n    <init-param>\n      <param-name>contextConfigLocation</param-name>\n      <param-value>WEB-INF/dispatcher-servlet.xml</param-value>\n    </init-param>\n    <load-on-startup>1</load-on-startup>\n  </servlet>\n  \n  <servlet-mapping>\n    <servlet-name>dispatcher</servlet-name>\n    <url-pattern>/</url-pattern>\n  </servlet-mapping>\n</web-app>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- target/Comfort/WEB-INF/web.xml	(revision c46eda20f9a9e32e71acbe68aa13e046e51c5f37)
++++ target/Comfort/WEB-INF/web.xml	(date 1526971006387)
+@@ -21,4 +21,21 @@
+     <servlet-name>dispatcher</servlet-name>
+     <url-pattern>/</url-pattern>
+   </servlet-mapping>
++
++  <filter>
++    <filter-name>encodingFilter</filter-name>
++    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
++    <init-param>
++      <param-name>encoding</param-name>
++      <param-value>UTF-8</param-value>
++    </init-param>
++    <init-param>
++      <param-name>forceEncoding</param-name>
++      <param-value>true</param-value>
++    </init-param>
++  </filter>
++  <filter-mapping>
++    <filter-name>encodingFilter</filter-name>
++    <url-pattern>/*</url-pattern>
++  </filter-mapping>
+ </web-app>
+\ No newline at end of file
+Index: src/main/java/com/comfortdelivery/service/CategoryServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/comfortdelivery/service/CategoryServiceImpl.java	(date 1526969833141)
++++ src/main/java/com/comfortdelivery/service/CategoryServiceImpl.java	(date 1526969833141)
+@@ -0,0 +1,24 @@
++package com.comfortdelivery.service;
++
++import com.comfortdelivery.dao.CategoryDao;
++import com.comfortdelivery.entity.Category;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.stereotype.Service;
++import org.springframework.transaction.annotation.Transactional;
++
++import java.util.List;
++
++@Service
++public class CategoryServiceImpl implements CategoryService {
++
++    private CategoryDao categoryDao;
++    CategoryServiceImpl(@Autowired CategoryDao categoryDao) {
++        this.categoryDao = categoryDao;
++    }
++
++    @Override
++    @Transactional
++    public List<Category> getCategories() {
++        return categoryDao.getCategories();
++    }
++}
+Index: src/main/java/com/comfortdelivery/ConnectionTester.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/comfortdelivery/ConnectionTester.java	(date 1526970024504)
++++ src/main/java/com/comfortdelivery/ConnectionTester.java	(date 1526970024504)
+@@ -0,0 +1,48 @@
++package com.comfortdelivery;
++
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.SQLException;
++import java.util.Locale;
++
++public class ConnectionTester {
++    public static void main(String[] args) {
++
++        try {
++            Class.forName("oracle.jdbc.driver.OracleDriver");
++
++        } catch (ClassNotFoundException e) {
++
++            System.out.println("Where is your Oracle JDBC Driver?");
++            e.printStackTrace();
++            return;
++
++        }
++
++        System.out.println("Oracle JDBC Driver Registered!");
++
++        Connection connection = null;
++
++        try {
++            System.out.println(Locale.getDefault());
++            //Locale.setDefault(Locale.ENGLISH);
++
++            connection = DriverManager.getConnection(
++                    "jdbc:oracle:thin:@localhost:1521:xe", "ComfortDelivery", "12345123");
++
++        } catch (SQLException e) {
++
++            System.out.println("Connection Failed! Check output console");
++            e.printStackTrace();
++            return;
++
++        }
++
++        if (connection != null) {
++            System.out.println("You made it, take control your database now!");
++        } else {
++            System.out.println("Failed to make connection!");
++        }
++    }
++}
++
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/uiDesigner.xml	(date 1526624751656)
++++ .idea/uiDesigner.xml	(date 1526624751656)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file
+Index: subcategories.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- subcategories.sql	(date 1526965447026)
++++ subcategories.sql	(date 1526965447026)
+@@ -0,0 +1,45 @@
++--TV--
++INSERT INTO SUBCATEGORIES VALUES (1, '??????????', 1);
++INSERT INTO SUBCATEGORIES VALUES (2, 'DVD ??????', 1);
++INSERT INTO SUBCATEGORIES VALUES (3, '???????? ??????????', 1);
++INSERT INTO SUBCATEGORIES VALUES (4, '??????????? ??????', 1);
++INSERT INTO SUBCATEGORIES VALUES (5, '?????????', 1);
++
++--???????? ???????--
++INSERT INTO SUBCATEGORIES VALUES (51, '????????????', 2);
++INSERT INTO SUBCATEGORIES VALUES (52, '???????? ?????', 2);
++INSERT INTO SUBCATEGORIES VALUES (53, '????????????? ??????', 2);
++INSERT INTO SUBCATEGORIES VALUES (54, '???????', 2);
++INSERT INTO SUBCATEGORIES VALUES (55, '????????????? ????', 2);
++INSERT INTO SUBCATEGORIES VALUES (56, '???????????', 2);
++INSERT INTO SUBCATEGORIES VALUES (57, '???????????? ???????', 2);
++
++--??????? ??? ????--
++INSERT INTO SUBCATEGORIES VALUES (101, '?????????? ??????', 3);
++INSERT INTO SUBCATEGORIES VALUES (102, '????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (103, '????????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (104, '????????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (105, '???????????????', 3);
++INSERT INTO SUBCATEGORIES VALUES (106, '??????? ??????', 3);
++
++--?????????? ? ??????????--
++INSERT INTO SUBCATEGORIES VALUES (251, '????????? ?????', 4);
++INSERT INTO SUBCATEGORIES VALUES (252, '????????', 4);
++INSERT INTO SUBCATEGORIES VALUES (253, '????????', 4);
++INSERT INTO SUBCATEGORIES VALUES (254, '????????', 4);
++INSERT INTO SUBCATEGORIES VALUES (255, '???????', 4);
++INSERT INTO SUBCATEGORIES VALUES (256, '????????? ??????????/????', 4);
++
++--??????? ???????--
++INSERT INTO SUBCATEGORIES VALUES (151, '?????????', 5);
++INSERT INTO SUBCATEGORIES VALUES (152, '????????', 5);
++INSERT INTO SUBCATEGORIES VALUES (153, '???? ? ?????', 5);
++INSERT INTO SUBCATEGORIES VALUES (154, '???????', 5);
++INSERT INTO SUBCATEGORIES VALUES (155, '??????????? ?????', 5);
++
++--???????-????????????--
++INSERT INTO SUBCATEGORIES VALUES (201, '?????????????', 6);
++INSERT INTO SUBCATEGORIES VALUES (202, '??????????', 6);
++INSERT INTO SUBCATEGORIES VALUES (203, '??????', 6);
++INSERT INTO SUBCATEGORIES VALUES (204, '??????????', 6);
++INSERT INTO SUBCATEGORIES VALUES (205, '??????????', 6);
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/tags/order.tag
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/WEB-INF/tags/order.tag	(date 1527062225953)
++++ src/main/webapp/WEB-INF/tags/order.tag	(date 1527062225953)
+@@ -0,0 +1,1 @@
++<%@tag description="order-bin" pageEncoding="UTF-8"%>
+Index: src/main/webapp/WEB-INF/tags/search.tag
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/webapp/WEB-INF/tags/search.tag	(date 1527062225845)
++++ src/main/webapp/WEB-INF/tags/search.tag	(date 1527062225845)
+@@ -0,0 +1,1 @@
++<%@tag description="search-panel" pageEncoding="UTF-8"%>

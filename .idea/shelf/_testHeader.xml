@@ -1,0 +1,14 @@
+<changelist name="#testHeader" date="1527062297397" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/#testHeader/shelved.patch" />
+  <option name="DESCRIPTION" value="#testHeader" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="sqlScripts/subcategories.docx" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/#testHeader/subcategories.docx" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/main/webapp/resources/images/comfort-header.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/#testHeader/comfort-header.jpg" />
+  </binary>
+</changelist>

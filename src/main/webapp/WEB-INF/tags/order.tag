@@ -16,6 +16,6 @@
             </c:forEach>
         </div>
         <div class="submit-order">
-            <input class="submit-order-button" type="submit" disabled="true"/>
+            <input class="submit-order-button" type="submit"/>
         </div>
     </div>

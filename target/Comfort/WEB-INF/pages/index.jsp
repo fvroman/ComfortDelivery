@@ -20,19 +20,25 @@
                     </c:if>
                     <td>
                         <div class="category-menu-item">
+                            <c:url var="categoryLink" value="getRequestPage">
+                                <c:param name="categoryPath" value="${category.title}"/>
+                            </c:url>
                             <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
                                  width="100" height="180">
                             <div class="category-list">
-                                <h4>${category.title}</h4>
+                                <a href="${pageContext.request.contextPath}/${category.title}/">
+                                    <h4>${category.title}</h4>
+                                </a>
                                 <hr>
                                 <c:forEach var="subcategory" items="${category.subcategories}">
                                 <span class="subcategory-title">
-                                    <c:out value="${subcategory.subcategoryName}"/>
+                                    <a href="${pageContext.request.contextPath}/${category.title}/${subcategory.subcategoryName}/${subcategory.subcategoryId}">
+                                            ${subcategory.subcategoryName}</a>
                                 </span>
                                     <br>
                                 </c:forEach>
                             </div>
-                            </div>
+                        </div>
                     </td>
                     <c:if test="${loop.index % 2 != 0}">
                         </tr>

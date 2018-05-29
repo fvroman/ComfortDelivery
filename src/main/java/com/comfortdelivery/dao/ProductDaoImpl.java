@@ -24,4 +24,12 @@ public class ProductDaoImpl implements ProductDao{
 
         return query.getResultList();
     }
+
+    public List<Product> getProductsBySubcategory(String subcategory){
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product where subcategory = :subcategory", Product.class);
+        query.setParameter("subcategory", subcategory);
+        return query.getResultList();
+    }
+
 }

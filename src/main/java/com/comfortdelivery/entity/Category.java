@@ -8,19 +8,11 @@ import java.util.List;
 public class Category {
 
     @Id
-    @Column(name = "category_id")
-    private long categoryId;
-
     @Column(name = "category_name")
-    private String Title;
+    private String categoryName;
 
-    public String getTitle() {
-        return Title;
-    }
-
-    public void setTitle(String title) {
-        Title = title;
-    }
+    @Column(name = "category_seq")
+    private long categorySeq;
 
     @OneToMany(mappedBy = "category",
                fetch = FetchType.EAGER,
@@ -28,8 +20,12 @@ public class Category {
                     CascadeType.DETACH, CascadeType.REFRESH})
     private List<Subcategory> subcategories;
 
-    public long getCategoryId() {
-        return categoryId;
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 
     public List<Subcategory> getSubcategories() {

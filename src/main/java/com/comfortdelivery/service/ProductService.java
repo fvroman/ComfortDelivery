@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> getProducts();
+    List<Product> getProductsBySubcategory(String subcategory);
 
 }

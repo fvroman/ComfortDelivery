@@ -23,15 +23,17 @@ public class Product {
     @JoinColumn(name = "product_id")
     private List<Feature> features;
 
+    //это говно, возможно нужно будет что-нибудь придумать
+    @Column(name = "subcategory")
+    private String subcategory;
+
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                 CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = "ordered_products",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<Order> orders;
-
-
-    //private SubCategory subCategory;
 
     public long getProductId() {
         return productId;
@@ -59,6 +61,14 @@ public class Product {
 
     public void setFeatures(List<Feature> features) {
         this.features = features;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
     }
 
     @Override

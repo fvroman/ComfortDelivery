@@ -6,20 +6,16 @@ import javax.persistence.*;
 @Table(name = "subcategories")
 public class Subcategory {
     @Id
-    @Column(name = "subcategory_id")
-    private long subcategoryId;
-
     @Column(name = "subcategory_name")
     private String subcategoryName;
 
+    @Column(name = "subcategory_seq")
+    private long subcategorySeq;
+
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_name")
     private Category category;
-
-    public long getSubcategoryId() {
-        return subcategoryId;
-    }
 
     public String getSubcategoryName() {
         return subcategoryName;

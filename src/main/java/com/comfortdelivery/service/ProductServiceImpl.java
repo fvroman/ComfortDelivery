@@ -22,4 +22,8 @@ public class ProductServiceImpl implements ProductService {
         return productDao.getProducts();
     }
 
+    @Transactional
+    public List<Product> getProductsBySubcategory(String subcategory){
+        return productDao.getProductsBySubcategory(subcategory);
+    }
 }

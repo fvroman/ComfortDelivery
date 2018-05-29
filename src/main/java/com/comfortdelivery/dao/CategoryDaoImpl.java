@@ -20,7 +20,7 @@ public class CategoryDaoImpl implements CategoryDao {
 
     public List<Category> getCategories() {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Category ", Category.class);
+        Query query = session.createQuery("from Category order by categorySeq", Category.class);
         return query.getResultList();
     }
 }

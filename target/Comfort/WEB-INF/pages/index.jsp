@@ -20,21 +20,23 @@
                     </c:if>
                     <td>
                         <div class="category-menu-item">
-                            <c:url var="categoryLink" value="getRequestPage">
-                                <c:param name="categoryPath" value="${category.title}"/>
+                            <c:url var="categoryUrl"
+                                   value="${pageContext.request.contextPath}/${category.categoryName}">
                             </c:url>
                             <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
                                  width="100" height="180">
                             <div class="category-list">
-                                <a href="${pageContext.request.contextPath}/${category.title}/">
-                                    <h4>${category.title}</h4>
+                                <a href=${categoryUrl}>
+                                    <h4>${category.categoryName}</h4>
                                 </a>
                                 <hr>
                                 <c:forEach var="subcategory" items="${category.subcategories}">
-                                <span class="subcategory-title">
-                                    <a href="${pageContext.request.contextPath}/${category.title}/${subcategory.subcategoryName}/${subcategory.subcategoryId}">
-                                            ${subcategory.subcategoryName}</a>
-                                </span>
+                                    <c:url var="subcategoryUrl" value="${categoryUrl}/${subcategory.subcategoryName}"/>
+                                    <span class="subcategory-title">
+                                        <a href="${subcategoryUrl}">
+                                            <c:out value="${subcategory.subcategoryName}"/>
+                                        </a>
+                                     </span>
                                     <br>
                                 </c:forEach>
                             </div>

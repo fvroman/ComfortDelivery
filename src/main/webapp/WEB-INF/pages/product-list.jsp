@@ -16,11 +16,12 @@
         <h3>${subcategoryName}</h3>
         <div class="filters-common">
             <div class="price-filter">
+                <!--todo минимум и максимум в категории!-->
                 <h4>Цена</h4>
                 От
-                <input type="number">
+                <input type="number" value="0" min="0">
                 До
-                <input type="number">
+                <input type="number" value="0" min="0">
             </div>
             <hr>
             <div class="brand-filter">
@@ -29,6 +30,23 @@
                    <label><input type="checkbox">Samsung</label>
                 </c:forEach>
             </div>
+        </div>
+        <div class="product-list">
+            <c:forEach begin="0" end="10">
+            <div class="product-list-item">
+                <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
+                     width="100" height="180">
+                <div class="product-description">
+                    <span class="product-title">Очень клевый холоднильник</span>
+                    <hr>
+                    <c:forEach begin="0" end="10">
+                        <span class="product-feature">Фьюча 545</span>
+                    </c:forEach>
+                    <span class="product-price">999999 руб.</span>
+                    <button class="add-to-order-button" title="Купить">Купить</button>
+                </div>
+            </div>
+            </c:forEach>
         </div>
         <c:forEach var="product" items="${products}">
             <c:out value="${product.productName} ${product.price} ${product.subcategory}"/>

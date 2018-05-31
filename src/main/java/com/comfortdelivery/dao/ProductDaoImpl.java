@@ -32,4 +32,6 @@ public class ProductDaoImpl implements ProductDao{
         return query.getResultList();
     }
 
+
+
 }

@@ -2,6 +2,7 @@ package com.comfortdelivery.controller;
 
 import com.comfortdelivery.entity.Category;
 import com.comfortdelivery.entity.Product;
+import com.comfortdelivery.model.OrderBin;
 import com.comfortdelivery.service.CategoryService;
 import com.comfortdelivery.service.ProductService;
 import org.jboss.jandex.Index;
@@ -22,15 +23,18 @@ import java.util.List;
 public class CategoryController {
 
     private CategoryService categoryService;
+    private OrderBin orderBin;
 
-    CategoryController(@Autowired CategoryService categoryService) {
+    CategoryController(@Autowired CategoryService categoryService, @Autowired OrderBin orderBin) {
         this.categoryService = categoryService;
+        this.orderBin = orderBin;
     }
 
     @RequestMapping("/")
     public String home(Model model){
         List<Category> categories = categoryService.getCategories();
         model.addAttribute("categories", categories);
+        model.addAttribute("orderBin", orderBin);
         return "index";
     }
 

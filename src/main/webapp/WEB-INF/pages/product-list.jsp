@@ -11,17 +11,17 @@
 </head>
 <t:generic-page>
 <jsp:body>
-<t:search-and-order/>
-    <form:form method="get" modelAttribute="products">
+<t:search-and-order orderBin="${orderBin}"/>
+    <form:form method="get">
         <h3>${subcategoryName}</h3>
         <div class="filters-common">
             <div class="price-filter">
                 <!--todo минимум и максимум в категории!-->
                 <h4>Цена</h4>
                 От
-                <input type="number" value="0" min="0">
+                <input type="number" value="${minPrice}" min="0">
                 До
-                <input type="number" value="0" min="0">
+                <input type="number" value="${maxPrice}" min="0">
             </div>
             <hr>
             <div class="brand-filter">
@@ -32,26 +32,22 @@
             </div>
         </div>
         <div class="product-list">
-            <c:forEach begin="0" end="10">
+            <c:forEach var="product" items="${products}">
             <div class="product-list-item">
                 <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
                      width="100" height="180">
                 <div class="product-description">
-                    <span class="product-title">Очень клевый холоднильник</span>
+                    <span class="product-title">${product.productName}</span>
                     <hr>
-                    <c:forEach begin="0" end="10">
-                        <span class="product-feature">Фьюча 545</span>
+                    <c:forEach var="feature" items="${product.features}">
+                        <span class="product-feature">${feature.title} : ${feature.value}</span>
                     </c:forEach>
-                    <span class="product-price">999999 руб.</span>
-                    <button class="add-to-order-button" title="Купить">Купить</button>
                 </div>
+                <span class="product-price">${product.price}</span>
+                <button class="add-to-order-button" title="Купить">Купить</button>
             </div>
             </c:forEach>
         </div>
-        <c:forEach var="product" items="${products}">
-            <c:out value="${product.productName} ${product.price} ${product.subcategory}"/>
-            <br>
-        </c:forEach>
     </form:form>
 </jsp:body>
 </t:generic-page>

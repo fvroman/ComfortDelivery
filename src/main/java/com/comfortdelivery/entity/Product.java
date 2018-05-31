@@ -17,9 +17,9 @@ public class Product {
     private String productName;
 
     @Column(name = "price")
-    private long price;
+    private int price;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
     private List<Feature> features;
 
@@ -47,11 +47,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public long getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

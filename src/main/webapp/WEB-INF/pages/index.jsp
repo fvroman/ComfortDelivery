@@ -10,7 +10,7 @@
 </head>
 <t:generic-page>
     <jsp:body>
-        <t:search-and-order/>
+        <t:search-and-order orderBin="${orderBin}"/>
         <form:form method="GET">
             <table>
                 <c:forEach var="category" items="${categories}" varStatus="loop">

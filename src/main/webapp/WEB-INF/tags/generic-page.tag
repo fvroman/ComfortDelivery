@@ -1,8 +1,13 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@tag description="Page template" pageEncoding="UTF-8"%>
 <html>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 <link type="text/css" rel = "stylesheet" href="${pageContext.request.contextPath}/resources/css/generic-page.css">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<script src='${pageContext.request.contextPath}/dwr/engine.js'></script>
+<script src='${pageContext.request.contextPath}/dwr/interface/OrderBin.js'></script>
+<script src='${pageContext.request.contextPath}/dwr/util.js'></script>
+<script src="${pageContext.request.contextPath}/resources/js/binManipulation.js"></script>
 <body>
 <div id="pageheader">
     <!--TODO Это подлежит рефакторингу, когда сделаю соотв.класс-->

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -25,5 +26,13 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public List<Product> getProductsBySubcategory(String subcategory){
         return productDao.getProductsBySubcategory(subcategory);
+    }
+
+    public int getMinimumPrice(List<Product> products) {
+        return products.stream().mapToInt(Product::getPrice).min().orElse(0);
+    }
+
+    public int getMaximumPrice(List<Product> products) {
+        return products.stream().mapToInt(Product::getPrice).max().orElse(0);
     }
 }

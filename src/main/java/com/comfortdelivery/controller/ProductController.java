@@ -18,11 +18,9 @@ import java.util.Random;
 public class ProductController {
 
     private ProductService productService;
-    private OrderBin orderBin;
 
-    ProductController(@Autowired ProductService productService, @Autowired OrderBin orderBin) {
+    ProductController(@Autowired ProductService productService) {
         this.productService = productService;
-        this.orderBin = orderBin;
     }
 
     @GetMapping(path = "/{subcategory}")
@@ -30,13 +28,13 @@ public class ProductController {
         List<Product> products = productService.getProductsBySubcategory(subcategory);
         int minPrice = productService.getMinimumPrice(products);
         int maxPrice = productService.getMaximumPrice(products);
-        //orderBin.add(products.get(new Random().nextInt(products.size())));
 
         model.addAttribute("products", products);
         model.addAttribute("subcategoryName", subcategory);
         model.addAttribute("minPrice", minPrice);
         model.addAttribute("maxPrice", maxPrice);
-        model.addAttribute("orderBin", orderBin);
         return "product-list";
     }
+
+
 }

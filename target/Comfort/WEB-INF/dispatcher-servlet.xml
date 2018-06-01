@@ -5,31 +5,34 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
-       xsi:schemaLocation="
-		http://www.springframework.org/schema/beans
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx.xsd
  		http://www.directwebremoting.org/schema/spring-dwr
-   	    http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
+   	    http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- Add support for component scanning -->
     <context:component-scan base-package="com.comfortdelivery"/>
 
     <!-- Add support for conversion, formatting and validation support -->
-    <mvc:annotation-driven/>
 
-    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
 
     <!-- Define Spring MVC view resolver -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="orderBin" class="com.comfortdelivery.model.OrderBin" scope="session">
+        <aop:scoped-proxy/>
     </bean>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
@@ -72,6 +75,7 @@
     <!-- Add support for reading web resources: css, images, js, etc ... -->
     <mvc:resources location="/resources/" mapping="/resources/**"/>
 
+    <mvc:view-controller path="/" view-name="index" />
 
 </beans>
 

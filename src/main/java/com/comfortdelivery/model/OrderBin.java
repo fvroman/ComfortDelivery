@@ -10,13 +10,10 @@ import org.springframework.web.context.WebApplicationContext;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@Scope(value = WebApplicationContext.SCOPE_SESSION,
-        proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class OrderBin {
 
     private List<Product> products;
-
+    private String fucken = "DFFDFDFSDFDS!";
     OrderBin() {
 
     }
@@ -32,8 +29,8 @@ public class OrderBin {
         products.add(product);
     }
 
-    public void remove(Product product) {
-
+    public void remove(int productId) {
+        products.remove(productId);
     }
 
     public void clear() {

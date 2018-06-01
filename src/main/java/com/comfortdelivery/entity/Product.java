@@ -33,6 +33,7 @@ public class Product {
     @JoinTable(name = "ordered_products",
             joinColumns = @JoinColumn(name = "product_id"),
             inverseJoinColumns = @JoinColumn(name = "order_id"))
+
     private List<Order> orders;
 
     public long getProductId() {

@@ -23,24 +23,23 @@ import java.util.List;
 public class CategoryController {
 
     private CategoryService categoryService;
-    private OrderBin orderBin;
 
-    CategoryController(@Autowired CategoryService categoryService, @Autowired OrderBin orderBin) {
+    CategoryController(@Autowired CategoryService categoryService) {
         this.categoryService = categoryService;
-        this.orderBin = orderBin;
     }
 
     @RequestMapping("/")
     public String home(Model model){
         List<Category> categories = categoryService.getCategories();
         model.addAttribute("categories", categories);
-        model.addAttribute("orderBin", orderBin);
         return "index";
     }
 
+    /*
     @RequestMapping(path = "/{category}")
     public String getSubcategories(@PathVariable String category) {
         return "testMap";
     }
+    */
 
 }

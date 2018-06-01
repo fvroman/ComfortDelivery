@@ -18,6 +18,11 @@ public class ProductDaoImpl implements ProductDao{
         this.sessionFactory = sessionFactory;
     }
 
+    public Product getSingleProduct(long id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Product.class, id);
+    }
+
     public List<Product> getProducts(){
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product", Product.class);

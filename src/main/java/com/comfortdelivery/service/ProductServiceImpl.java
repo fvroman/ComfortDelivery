@@ -19,10 +19,17 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
+    public Product getSingleProduct(long id) {
+        return productDao.getSingleProduct(id);
+    }
+
+    @Override
+    @Transactional
     public List<Product> getProducts() {
         return productDao.getProducts();
     }
 
+    @Override
     @Transactional
     public List<Product> getProductsBySubcategory(String subcategory){
         return productDao.getProductsBySubcategory(subcategory);

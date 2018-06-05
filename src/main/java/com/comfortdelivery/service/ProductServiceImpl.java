@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    ProductDao productDao;
+    private ProductDao productDao;
     ProductServiceImpl(@Autowired ProductDao productDao) {
         this.productDao = productDao;
     }
@@ -33,6 +33,12 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public List<Product> getProductsBySubcategory(String subcategory){
         return productDao.getProductsBySubcategory(subcategory);
+    }
+
+    @Override
+    @Transactional
+    public List<Product> searchProducts(String searchStr, Integer limit){
+        return productDao.searchProducts(searchStr, limit);
     }
 
     public int getMinimumPrice(List<Product> products) {

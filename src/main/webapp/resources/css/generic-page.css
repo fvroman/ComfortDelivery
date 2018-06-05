@@ -36,7 +36,6 @@ input[type=number] {
     font-weight:bold;
 }
 
-
 #navigation ul {
     background: white;
     width: 600px;
@@ -200,6 +199,14 @@ hr {
     font-weight: bold;
 }
 
+.remove-item-from-bin {
+    display: inline-block;
+    font-size: 14px;
+    float: right;
+    padding-top: 4px;
+    padding-right: 5px;
+}
+
 .submit-order {
     display: table-cell;
     vertical-align: middle;
@@ -217,5 +224,45 @@ hr {
     color:white;
 }
 
+.ui-menu {
+    list-style: none;
+    padding: 2px;
+    margin: 0;
+    display: block;
+    outline: none;
+}
 
+.ui-autocomplete{
+    width:420px;
+}
+.ui-menu .ui-menu-item {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: white;
+    list-style: none;
+    cursor: pointer;
+}
 
+.ui-corner-all {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.ui-widget {
+    color: black;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.autocomplete-label {
+    font-size:16px;
+    margin-left:10px;
+}
+
+.autocomplete-subcategory {
+    float: right;
+    font-size: 14px;
+    margin-right:10px;
+    color: var(--comfort-brown)
+}

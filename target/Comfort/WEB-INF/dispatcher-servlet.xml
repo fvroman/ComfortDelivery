@@ -31,7 +31,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="orderBin" class="com.comfortdelivery.model.OrderBin" scope="session">
+    <bean id="orderBin" class="com.comfortdelivery.beans.OrderBin" scope="session">
         <aop:scoped-proxy/>
     </bean>
 

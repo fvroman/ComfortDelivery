@@ -9,5 +9,7 @@ public interface ProductDao {
 
     List<Product> getProducts();
 
+    List<Product> searchProducts(String searchStr, Integer limit);
+
     List<Product> getProductsBySubcategory(String subcategory);
 }

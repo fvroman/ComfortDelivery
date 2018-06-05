@@ -13,10 +13,6 @@
     <jsp:body>
         <t:search-and-order/>
         <form:form method="get">
-            <c:forEach items="${sessionScope}" var="entry">
-                ${entry.key} = ${entry.value}<br>
-            </c:forEach>
-            <c:out value="${sessionScope['scopedTarget.orderBin'].products} FUdsUFUFUF"/>
             <h3>${subcategoryName}</h3>
             <div class="filters-common">
                 <div class="price-filter">
@@ -51,10 +47,10 @@
                         </div>
                         <span class="product-price">${product.price}</span>
                         <input type="button" class="add-to-bin-button" onclick="location.href = '${addToBin}'"
-                               title="Купить">Купить</in>
+                               value="Купить"/>
                     </div>
-                </c:forEach>
-            </div>
+                </c:forEach>Купить
+/            </div>
         </form:form>
     </jsp:body>
 </t:generic-page>

@@ -37,6 +37,15 @@ public class ProductDaoImpl implements ProductDao{
         return query.getResultList();
     }
 
+    public List<Product> searchProducts(String searchStr, Integer limit){
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product where lower(productName) like :searchStr", Product.class);
+        query.setParameter("searchStr", "%" + searchStr.toLowerCase() + "%");
+        if (limit != null) {
+            query.setMaxResults(10);
+        }
+        return query.getResultList();
+    }
 
 
 }

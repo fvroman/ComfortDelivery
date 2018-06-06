@@ -1,7 +1,8 @@
 <%@tag description="search-panel" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<div class="order-bin">
+<script src="${pageContext.request.contextPath}/resources/js/order-bin-actions.js"></script>
+<div id = "order-bin" class="order-bin">
     <div class="order-bin-title">Ваш заказ</div>
     <div class="order-bin-items">
         <c:forEach var="item" items="${sessionScope['scopedTarget.orderBin'].products}" varStatus="current">
@@ -17,13 +18,15 @@
                 <input type="number" name="quantity" min="1" max="99" value="1"/>
                 <span class="order-bin-item-price">${item.price}</span>
                 <span class="remove-item-from-bin">
-                    <a href="${delete}">
+                    <a class="delete-link" href=${delete}>
                         <i class="fa fa-times" aria-hidden="true"></i>
                     </a>
                 </span>
             </div>
         </c:forEach>
     </div>
+    <span id="total" class="order-bin-total">
+        ${sessionScope['scopedTarget.orderBin'].total}    </span>
     <div class="submit-order">
         <input class="submit-order-button" type="submit"/>
     </div>

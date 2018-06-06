@@ -46,8 +46,7 @@
                             </c:forEach>
                         </div>
                         <span class="product-price">${product.price}</span>
-                        <input type="button" class="add-to-bin-button" onclick="location.href = '${addToBin}'"
-                               value="Купить"/>
+                        <a href="${addToBin}" class="add-to-bin-button">Заказать</a>
                     </div>
                 </c:forEach>Купить
 /            </div>

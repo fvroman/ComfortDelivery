@@ -199,6 +199,12 @@ hr {
     font-weight: bold;
 }
 
+.order-bin-total {
+    font-weight: bold;
+    font-size:18px;
+    text-align: center;
+}
+
 .remove-item-from-bin {
     display: inline-block;
     font-size: 14px;

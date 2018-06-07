@@ -8,7 +8,7 @@ import java.util.List;
 public class OrderBin {
 
     private List<Product> products;
-    private Integer total = 5550;
+    private Integer total;
     OrderBin() {
 
     }
@@ -32,11 +32,11 @@ public class OrderBin {
         this.products = null;
     }
 
-    private int calculateTotal() {
+    private void calculateTotal() {
         if (products != null) {
-            return products.stream().mapToInt(Product::getPrice).sum();
+            total = products.stream().mapToInt(Product::getPrice).sum();
         }  else {
-            return 0;
+            total = 0;
         }
     }
 
@@ -45,6 +45,7 @@ public class OrderBin {
     }
 
     public Integer getTotal() {
+        calculateTotal();
         return total;
     }
 }

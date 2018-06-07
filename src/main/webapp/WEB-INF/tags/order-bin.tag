@@ -25,8 +25,9 @@
             </div>
         </c:forEach>
     </div>
-    <span id="total" class="order-bin-total">
-        ${sessionScope['scopedTarget.orderBin'].total}    </span>
+    <div id="total" class="order-bin-total">
+        ${sessionScope['scopedTarget.orderBin'].total}
+    </div>
     <div class="submit-order">
         <input class="submit-order-button" type="submit"/>
     </div>

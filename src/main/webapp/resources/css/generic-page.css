@@ -167,7 +167,7 @@ hr {
 
 .order-bin-items{
     overflow-y: scroll;
-    height:280px;
+    height:260px;
 }
 
 .order-bin-item{
@@ -200,8 +200,9 @@ hr {
 }
 
 .order-bin-total {
+    height:20px;
     font-weight: bold;
-    font-size:18px;
+    font-size: 18px;
     text-align: center;
 }
 

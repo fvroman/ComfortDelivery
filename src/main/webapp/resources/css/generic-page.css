@@ -167,7 +167,7 @@ hr {
 
 .order-bin-items{
     overflow-y: scroll;
-    height:280px;
+    height:260px;
 }
 
 .order-bin-item{
@@ -197,6 +197,13 @@ hr {
     padding-left:5px;
     font-size:14px;
     font-weight: bold;
+}
+
+.order-bin-total {
+    height:20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
 }
 
 .remove-item-from-bin {

@@ -3,12 +3,14 @@ package com.comfortdelivery.controller;
 import com.comfortdelivery.entity.Product;
 import com.comfortdelivery.beans.OrderBin;
 import com.comfortdelivery.service.ProductService;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.annotation.RequestScope;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -26,20 +28,18 @@ public class OrderController {
     }
 
     @RequestMapping("/deleteFromBin")
-    public String remove(@RequestParam int id, HttpServletRequest request) {
+    @ResponseBody
+    public ResponseEntity remove(@RequestParam int id) {
         orderBin.remove(id);
-        String referer = request.getHeader("Referer");
-        //todo  Временный костыль, потом сделаю интерцептор
-        return "redirect:/" + referer.substring(22,referer.length());
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @RequestMapping("/addToBin")
-    public String add(@RequestParam long id, HttpServletRequest request) {
+    @ResponseBody
+    public ResponseEntity add(@RequestParam long id) {
         Product product = productService.getSingleProduct(id);
         orderBin.add(product);
-        String referer = request.getHeader("Referer");
-        //todo  Временный костыль, потом сделаю интерцептор
-        return "redirect:/" + referer.substring(22,referer.length());
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 
 

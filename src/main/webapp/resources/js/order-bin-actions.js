@@ -1,4 +1,4 @@
-$(document).on("click",".delete-link , .add-to-bin-button",function (event) {
+$(document).on("click",".delete-link , .add-to-bin-button, .increaseLink, .decreaseLink",function (event) {
     var total = $("#total");
     var oldVal = parseInt(total.text());
     var newVal;

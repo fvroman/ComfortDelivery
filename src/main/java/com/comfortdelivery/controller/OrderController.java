@@ -29,8 +29,9 @@ public class OrderController {
 
     @RequestMapping("/deleteFromBin")
     @ResponseBody
-    public ResponseEntity remove(@RequestParam int id) {
-        orderBin.remove(id);
+    public ResponseEntity remove(@RequestParam long id) {
+        Product product = productService.getSingleProduct(id);
+        orderBin.remove(product);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
@@ -39,6 +40,14 @@ public class OrderController {
     public ResponseEntity add(@RequestParam long id) {
         Product product = productService.getSingleProduct(id);
         orderBin.add(product);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @RequestMapping("/decreaseAmount")
+    @ResponseBody
+    public ResponseEntity decrease(@RequestParam long id) {
+        Product product = productService.getSingleProduct(id);
+        orderBin.decreaseAmount(product);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 

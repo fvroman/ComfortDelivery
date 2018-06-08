@@ -2,6 +2,7 @@ package com.comfortdelivery.entity;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "products")
@@ -23,7 +24,6 @@ public class Product {
     @JoinColumn(name = "product_id")
     private List<Feature> features;
 
-    //это говно, возможно нужно будет что-нибудь придумать
     @Column(name = "subcategory")
     private String subcategory;
 
@@ -79,5 +79,25 @@ public class Product {
                 ", productName='" + productName + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productId, productName, price);
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == null) return false;
+        if (object == this) return true;
+        if (!(object instanceof Product)) {
+            return false;
+        }
+        Product otherProduct = (Product) object;
+        if (this.productId == (otherProduct.productId)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

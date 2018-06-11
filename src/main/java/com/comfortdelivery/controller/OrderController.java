@@ -1,5 +1,6 @@
 package com.comfortdelivery.controller;
 
+import com.comfortdelivery.entity.Order;
 import com.comfortdelivery.entity.Product;
 import com.comfortdelivery.beans.OrderBin;
 import com.comfortdelivery.service.ProductService;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.RequestScope;
 
@@ -27,7 +29,7 @@ public class OrderController {
         this.productService = productService;
     }
 
-    @RequestMapping("/deleteFromBin")
+    @GetMapping("/deleteFromBin")
     @ResponseBody
     public ResponseEntity remove(@RequestParam long id) {
         Product product = productService.getSingleProduct(id);
@@ -35,7 +37,7 @@ public class OrderController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @RequestMapping("/addToBin")
+    @GetMapping("/addToBin")
     @ResponseBody
     public ResponseEntity add(@RequestParam long id) {
         Product product = productService.getSingleProduct(id);
@@ -43,12 +45,19 @@ public class OrderController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @RequestMapping("/decreaseAmount")
+    @GetMapping("/decreaseAmount")
     @ResponseBody
     public ResponseEntity decrease(@RequestParam long id) {
         Product product = productService.getSingleProduct(id);
         orderBin.decreaseAmount(product);
         return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @GetMapping("/order")
+    public String placeOrder(Model model) {
+        Order order = new Order();
+        //TODO Заказ
+        return "order-confirmation";
     }
 
 

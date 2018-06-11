@@ -207,6 +207,15 @@ hr {
     text-align: center;
 }
 
+.total-text{
+    font-size:14px;
+    color:black;
+}
+
+.total-sum{
+    padding-left:10px;
+}
+
 .remove-item-from-bin {
     display: inline-block;
     font-size: 14px;
@@ -292,3 +301,4 @@ hr {
 .quantity {
     height: auto;
 }
+

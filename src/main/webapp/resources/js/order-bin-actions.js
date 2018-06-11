@@ -10,7 +10,7 @@ $(document).on("click",".delete-link , .add-to-bin-button, .increaseLink, .decre
             total.load(location.href + " #total", function () {
                 newVal = parseInt(total.text());
                 //Анимация изменяюшейся суммы
-                $(".order-bin-total").each(function () {
+                $(".total-sum").each(function () {
                     $(this).prop('Counter',oldVal).animate({
                         Counter: newVal
                     }, {

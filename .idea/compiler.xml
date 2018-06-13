@@ -9,8 +9,5 @@
         <module name="Comfort" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Comfort" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

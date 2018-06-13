@@ -11,7 +11,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_seq")
-    @SequenceGenerator(name = "order_seq", sequenceName = "order_seq", allocationSize = 1)
+    @SequenceGenerator(name = "order_seq", sequenceName = "order_seq", initialValue = 1000, allocationSize = 1)
     @Column(name = "order_id")
     private long orderId;
 
@@ -19,9 +19,11 @@ public class Order {
     private long orderSum;
 
     @Column(name = "order_date")
+    @Temporal(TemporalType.DATE)
     private Date orderDate;
 
     @Column(name = "delivery_date")
+    @Temporal(TemporalType.DATE)
     private Date deliveryDate;
 
     @Column(name = "status")
@@ -30,28 +32,24 @@ public class Order {
     @Column(name = "delivery_address")
     private String address;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                          CascadeType.DETACH, CascadeType.REFRESH})
+    //todo Почему не работает выборкой? Тут явно не ALL
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinTable(name = "ordered_products",
-               joinColumns = @JoinColumn(name = "order_id"),
-               inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private List<Product> products;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<OrderedProduct> orderedProducts;
 
     public long getOrderId() {
         return orderId;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<OrderedProduct> getOrderedProducts() {
+        return orderedProducts;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setOrderedProducts(List<OrderedProduct> orderedProducts) {
+        this.orderedProducts= orderedProducts;
     }
 
     public void setOrderId(long orderId) {
@@ -111,14 +109,4 @@ public class Order {
         return null;
     }
 
-    public void addProduct(Product product) {
-        if (products == null) {
-            products = new ArrayList<>();
-        }
-        products.add(product);
-    }
-
-    public void removeProduct(Product product) {
-        //todo когда буду делать корзину
-    }
 }

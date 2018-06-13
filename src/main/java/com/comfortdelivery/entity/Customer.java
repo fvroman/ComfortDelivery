@@ -1,6 +1,7 @@
 package com.comfortdelivery.entity;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -28,9 +29,16 @@ public class Customer {
     private String address;
 
     @OneToMany(mappedBy = "customer",
-               cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                          CascadeType.DETACH, CascadeType.REFRESH})
+               cascade = {CascadeType.ALL})
     private List<Order> orders;
+
+    public Customer() {
+        this.setAddress("testAdr");
+        this.setEmail("testEM");
+        this.setFullName("testflnm");
+        this.setPhoneNumber("434343");
+        this.setVillage("chunoyar");
+    }
 
     public long getCustomerId() {
         return customerId;

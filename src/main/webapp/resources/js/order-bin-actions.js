@@ -6,6 +6,7 @@ $(document).on("click",".delete-link , .add-to-bin-button, .increaseLink, .decre
     $.ajax({
         url: $(this).attr('href'),
         success: function() {
+            //todo рефакторнуть each
             $(".order-bin-items").load(location.href+" .order-bin-items>*","");
             total.load(location.href + " #total", function () {
                 newVal = parseInt(total.text());

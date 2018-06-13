@@ -4,18 +4,19 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/mvc
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd
 		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx.xsd
- 		http://www.directwebremoting.org/schema/spring-dwr
-   	    http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 	    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- Add support for component scanning -->
     <context:component-scan base-package="com.comfortdelivery"/>
@@ -68,6 +69,10 @@
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
+    <util:properties id="villages" location="WEB-INF/Properties/villages.properties"/>
+    <util:properties id="titles" location="WEB-INF/Properties/titles.properties"/>
+    <util:properties id="payment" location="WEB-INF/Properties/payment.properties"/>
 
     <!-- Step 4: Enable configuration of transactional behavior based on annotations -->
     <tx:annotation-driven transaction-manager="myTransactionManager"/>

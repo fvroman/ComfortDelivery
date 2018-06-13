@@ -27,14 +27,8 @@ public class Product {
     @Column(name = "subcategory")
     private String subcategory;
 
-
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-                CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinTable(name = "ordered_products",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "order_id"))
-
-    private List<Order> orders;
+    @OneToMany(mappedBy = "product")
+    private List<OrderedProduct> orders;
 
     public long getProductId() {
         return productId;

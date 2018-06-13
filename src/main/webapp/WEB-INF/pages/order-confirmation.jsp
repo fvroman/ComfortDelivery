@@ -12,26 +12,28 @@
 <t:generic-page>
     <jsp:body>
         <t:search/>
-        <form:form class = "order-details" action="confirmOrder" method="post">
+        <form:form class = "order-details" modelAttribute="customer" action="confirmOrder" method="post">
         <span class="confirm-header">Оформление Заказа</span>
             <t:order-bin-products/>
             <div class="user-details">
                 <span class="details-header">Контактные данные</span>
                 <div class="customer-name">
                     <span class="detail">Ф.И.О</span>
-                    <input type="text" class="detail-input"/>
+                    <form:input path="fullName" type="text" class="detail-input"/>
                 </div>
                 <div class="customer-town">
                     <span class="detail">Населенный пункт</span>
-                    <select class="detail"></select>
+                    <form:select path="village" class="detail">
+                        <form:options items="${villages}"/>
+                    </form:select>
                 </div>
                 <div class="customer-address">
                     <span class="detail">Адрес доставки</span>
-                    <input type="text" class="detail-input"/>
+                    <form:input path="address" type="text" class="detail-input"/>
                 </div>
                 <div class="customer-phone">
                     <span class="detail">Телефон</span>
-                    <input type="text" class="detail-input"/>
+                    <form:input path="phoneNumber" type="text" class="detail-input"/>
                 </div>
                 <div class="payment-method">
                     <span class="detail">Способ оплаты</span>

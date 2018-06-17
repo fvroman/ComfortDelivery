@@ -36,7 +36,7 @@
                         <c:param name="id" value="${product.productId}"/>
                     </c:url>
                     <div class="product-list-item">
-                        <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
+                        <img src="../static/${product.imageLink}" alt="тест"
                              width="100" height="180">
                         <div class="product-description">
                             <span class="product-title">${product.productName}</span>

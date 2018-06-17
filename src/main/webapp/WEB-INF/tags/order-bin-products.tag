@@ -14,7 +14,7 @@
                 <c:param name="id" value="${item.key.productId}"/>
             </c:url>
             <span>
-                <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="item" width="40"
+                <img src="../static/${item.key.imageLink}" alt="item" width="40"
                      height="40">
             </span>
             <span class="order-bin-item-title">${item.key.productName}</span>

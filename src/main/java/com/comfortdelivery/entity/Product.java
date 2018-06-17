@@ -30,7 +30,11 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<OrderedProduct> orders;
 
+    @Column(name = "image_link")
+    private String imageLink;
+
     public long getProductId() {
+
         return productId;
     }
 
@@ -64,6 +68,14 @@ public class Product {
 
     public void setSubcategory(String subcategory) {
         this.subcategory = subcategory;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 
     @Override

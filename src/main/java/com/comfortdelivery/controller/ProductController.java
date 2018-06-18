@@ -33,4 +33,10 @@ public class ProductController {
         return "product-list";
     }
 
+    @GetMapping(path = "/{subcategory}/filter")
+    public String filterProducts(@PathVariable String subcategory, @RequestParam int min) {
+        return "product-list";
+    }
+
+
 }

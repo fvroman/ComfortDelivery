@@ -80,6 +80,8 @@
     <!-- Add support for reading web resources: css, images, js, etc ... -->
     <mvc:resources location="/resources/" mapping="/resources/**"/>
 
+    <mvc:resources mapping="/static/**" location="file:c://ComfortImages/" />
+
     <mvc:view-controller path="/" view-name="index" />
 
 </beans>

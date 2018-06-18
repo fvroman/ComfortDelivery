@@ -302,3 +302,13 @@ hr {
     height: auto;
 }
 
+.info-container{
+    width: 700px;
+    margin-left: 140px;
+    background-color: white;
+    text-align: center;
+    margin-top:20px;
+    padding: 10px;
+}
+
+

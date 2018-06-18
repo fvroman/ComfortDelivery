@@ -78,22 +78,9 @@ public class OrderController {
 
     @RequestMapping("/confirmOrder")
     public String confirmOrder(@ModelAttribute Customer customer) {
-        Order order = new Order();
-        List<OrderedProduct> orderedProducts = new ArrayList<>();
-        for (Map.Entry<Product, Integer> productEntry : orderBin.getProducts().entrySet()) {
-            OrderedProduct orderedProduct = new OrderedProduct();
-            orderedProduct.setProduct(productEntry.getKey());
-            orderedProduct.setQuantity(productEntry.getValue());
-            orderedProduct.setOrder(order);
-            orderedProducts.add(orderedProduct);
-        }
-        order.setOrderedProducts(orderedProducts);
-        order.setAddress("test");
-        order.setCustomer(customer);
-        order.setOrderSum(orderBin.getTotal());
-        order.setOrderDate(new Date());
-        order.setStatus(1);
+        Order order = orderService.fillOrder(orderBin.getProducts(), customer);
         orderService.saveOrder(order);
+        orderBin.clear();
         return "ok";
     }
 

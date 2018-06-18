@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@tag description="Page template" pageEncoding="UTF-8"%>
 <html>
 <head>
@@ -13,15 +14,16 @@
     <script src="${pageContext.request.contextPath}/resources/js/autocomplete.js"></script>
 </head>
 <body>
+<c:url value="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, '')}" var="baseUrl"/>
 <div id="pageheader">
     <!--TODO Это подлежит рефакторингу, когда сделаю соотв.класс-->
     <div id = "navigation" style="position:relative">
         <img src="${pageContext.request.contextPath}/resources/images/comfort-header.jpg" alt = "Уют" width="auto">
         <ul>
-            <li>Главная</li>
-            <li>Доставка и оплата</li>
-            <li>Контакты</li>
-            <li>Регистрация/Вход</li>
+            <a href="${baseUrl}"><li>Главная</li></a>
+            <a href="${baseUrl}/delivery"><li>Доставка и оплата</li></a>
+            <a href="${baseUrl}/contacts"><li>Контакты</li></a>
+            <a href="${baseUrl}/login"><li>Регистрация/Вход</li></a>
         </ul>
     </div>
 </div>

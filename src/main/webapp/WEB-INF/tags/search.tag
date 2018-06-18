@@ -1,6 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@tag description="search-panel" pageEncoding="UTF-8"%>
-<form:form action="searchProducts" method="get">
+<form:form action="/searchProducts" method="get">
     <div class="default-search-panel">
     <div class="search-with-button-and-select">
         <button type="reset" class="category-selector">

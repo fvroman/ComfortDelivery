@@ -14,13 +14,16 @@
         <t:search-and-order/>
         <form:form method="get">
             <h3>${subcategoryName}</h3>
+            <c:url var="filter" value="${pageContext.request.contextPath}">
+                <c:param name="min" value="getMinVal()"/>
+            </c:url>
             <div class="filters-common">
                 <div class="price-filter">
                     <h4>Цена</h4>
                     От
-                    <input type="number" value="${minPrice}" min="0">
+                    <input id = "min" type="number" value="${minPrice}" min="0">
                     До
-                    <input type="number" value="${maxPrice}" min="0">
+                    <input id = "max" type="number" value="${maxPrice}" min="0">
                 </div>
                 <hr>
                 <div class="brand-filter">
@@ -48,7 +51,7 @@
                         <span class="product-price">${product.price}</span>
                         <a href="${addToBin}" class="add-to-bin-button">Заказать</a>
                     </div>
-                </c:forEach>Купить
+                </c:forEach>
 /            </div>
         </form:form>
     </jsp:body>

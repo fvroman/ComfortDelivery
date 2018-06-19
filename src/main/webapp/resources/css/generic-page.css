@@ -311,4 +311,12 @@ hr {
     padding: 10px;
 }
 
+.success-container{
+    width: 700px;
+    margin-left: 140px;
+    background-color: white;
+    text-align: left;
+    margin-top:20px;
+    padding: 10px;
+}
 

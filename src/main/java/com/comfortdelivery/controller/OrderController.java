@@ -7,7 +7,9 @@ import com.comfortdelivery.entity.Product;
 import com.comfortdelivery.beans.OrderBin;
 import com.comfortdelivery.service.OrderService;
 import com.comfortdelivery.service.ProductService;
+import com.comfortdelivery.service.ReportService;
 import com.sun.deploy.net.HttpResponse;
+import org.apache.tools.ant.taskdefs.condition.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
@@ -77,12 +79,23 @@ public class OrderController {
     }
 
     @RequestMapping("/confirmOrder")
-    public String confirmOrder(@ModelAttribute Customer customer) {
+    public String confirmOrder(@ModelAttribute Customer customer, Model model) {
         Order order = orderService.fillOrder(orderBin.getProducts(), customer);
         orderService.saveOrder(order);
         orderBin.clear();
-        return "ok";
+        model.addAttribute("order",order);
+        return "success";
     }
+
+    @RequestMapping("/generateReport")
+    public ResponseEntity GenerateReport(@RequestParam int orderId) {
+        ReportService.generateAgreement(orderService.getOrder(orderId));
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+
+
+
 
 
 }

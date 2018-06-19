@@ -82,6 +82,8 @@
 
     <mvc:resources mapping="/static/**" location="file:c://ComfortImages/" />
 
+    <mvc:resources mapping="/reports/agreements/**" location="file:c://ComfortReports/Agreements/" />
+
     <mvc:view-controller path="/" view-name="index" />
 
 </beans>

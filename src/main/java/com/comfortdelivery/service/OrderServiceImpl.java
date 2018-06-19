@@ -18,6 +18,13 @@ public class OrderServiceImpl implements OrderService {
     OrderServiceImpl(@Autowired OrderDao orderDao) {
         this.orderDao = orderDao;
     }
+
+    @Override
+    @Transactional
+    public Order getOrder(long id){
+        return orderDao.getOrder(id);
+    }
+
     @Override
     @Transactional
     public List<Order> getOrders() {

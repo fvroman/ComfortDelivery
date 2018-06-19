@@ -13,5 +13,7 @@ public interface OrderDao {
 
     public Order fillOrder(Map<Product, Integer> binProducts, Customer customer);
 
+    public Order getOrder(long id);
+
     public void saveOrder(Order order);
 }

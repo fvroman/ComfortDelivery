@@ -24,6 +24,12 @@ public class OrderDaoImpl implements OrderDao{
     }
 
     @Override
+    public Order getOrder(long id) {
+
+        return sessionFactory.getCurrentSession().get(Order.class, id);
+    }
+
+    @Override
     public List<Order> getOrders() {
         return null;
     }

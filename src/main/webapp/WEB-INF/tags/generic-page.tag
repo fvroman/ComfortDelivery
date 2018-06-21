@@ -16,7 +16,6 @@
 <body>
 <c:url value="${fn:replace(pageContext.request.requestURL, pageContext.request.requestURI, '')}" var="baseUrl"/>
 <div id="pageheader">
-    <!--TODO Это подлежит рефакторингу, когда сделаю соотв.класс-->
     <div id = "navigation" style="position:relative">
         <img src="${pageContext.request.contextPath}/resources/images/comfort-header.jpg" alt = "Уют" width="auto">
         <ul>

@@ -9,10 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class OrderDaoImpl implements OrderDao{
@@ -44,7 +41,7 @@ public class OrderDaoImpl implements OrderDao{
     public Order fillOrder(Map<Product, Integer> binProducts, Customer customer) {
         Order order = new Order();
 
-        List<OrderedProduct> orderedProducts = new ArrayList<>();
+        Set<OrderedProduct> orderedProducts = new LinkedHashSet<>();
 
         for (Map.Entry<Product, Integer> productEntry : binProducts.entrySet()) {
             OrderedProduct orderedProduct = new OrderedProduct();

@@ -319,4 +319,11 @@ hr {
     margin-top:20px;
     padding: 10px;
 }
-
+.agreement-container{
+    text-align: center;
+}
+.goods-table {
+    width: 100%;
+    border: solid 1px;
+    font-size:14px;
+}

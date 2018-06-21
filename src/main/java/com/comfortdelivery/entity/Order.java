@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
@@ -37,18 +38,18 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderedProduct> orderedProducts;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<OrderedProduct> orderedProducts;
 
     public long getOrderId() {
         return orderId;
     }
 
-    public List<OrderedProduct> getOrderedProducts() {
+    public Set<OrderedProduct> getOrderedProducts() {
         return orderedProducts;
     }
 
-    public void setOrderedProducts(List<OrderedProduct> orderedProducts) {
+    public void setOrderedProducts(Set<OrderedProduct> orderedProducts) {
         this.orderedProducts= orderedProducts;
     }
 

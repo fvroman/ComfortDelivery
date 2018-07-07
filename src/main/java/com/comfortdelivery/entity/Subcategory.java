@@ -3,14 +3,11 @@ package com.comfortdelivery.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "subcategories")
+@Table(name = "SUBCATEGORIES")
 public class Subcategory {
     @Id
     @Column(name = "subcategory_name")
     private String subcategoryName;
-
-    @Column(name = "subcategory_seq")
-    private long subcategorySeq;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,
                           CascadeType.DETACH, CascadeType.REFRESH})

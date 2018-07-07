@@ -3,12 +3,11 @@ package com.comfortdelivery.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="ordered_products")
+@Table(name="ORDERED_PRODUCTS")
 public class OrderedProduct {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ordered_product_seq")
-    @SequenceGenerator(name = "ordered_product_seq", sequenceName = "ordered_product_seq", initialValue = 10000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 

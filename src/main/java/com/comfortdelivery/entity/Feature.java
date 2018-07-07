@@ -3,12 +3,11 @@ package com.comfortdelivery.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "features")
+@Table(name = "FEATURES")
 public class Feature {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "feature_seq")
-    @SequenceGenerator(name = "feature_seq", sequenceName = "feature_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 

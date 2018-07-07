@@ -7,12 +7,11 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "ORDERS")
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_seq")
-    @SequenceGenerator(name = "order_seq", sequenceName = "order_seq", initialValue = 1000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
     private long orderId;
 

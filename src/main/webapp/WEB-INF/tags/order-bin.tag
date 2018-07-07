@@ -7,7 +7,7 @@
     <div class="order-bin-title">Ваш заказ</div>
    <t:order-bin-products/>
     <div class="submit-order">
-        <input class="submit-order-button" type="submit"/>
+        <input class="submit-order-button" value="Оформить заказ" type="submit"/>
     </div>
 </div>
 </form>

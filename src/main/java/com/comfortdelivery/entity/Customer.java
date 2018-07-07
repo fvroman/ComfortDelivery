@@ -5,11 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "CUSTOMERS")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
-    @SequenceGenerator(name = "customer_seq", sequenceName = "customer_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private long customerId;
 

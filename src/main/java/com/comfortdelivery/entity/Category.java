@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "CATEGORIES")
 public class Category {
 
     @Id
@@ -35,4 +35,5 @@ public class Category {
     public void setSubcategories(List<Subcategory> subCategories) {
         this.subcategories = subCategories;
     }
+
 }

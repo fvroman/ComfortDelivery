@@ -5,12 +5,11 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "products")
+@Table(name = "PRODUCTS")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_seq")
-    @SequenceGenerator(name = "product_seq", sequenceName = "product_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")
     private long productId;
 

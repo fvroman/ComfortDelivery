@@ -40,7 +40,7 @@
                     <select class="detail"></select>
                 </div>
             </div>
-            <input class = "confirm-order-button" type="submit">
+            <input class = "confirm-order-button" value="Оформить" type="submit">
         </form:form>
     </jsp:body>
 </t:generic-page>

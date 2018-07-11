@@ -19,6 +19,7 @@ public class Product {
     @Column(name = "price")
     private int price;
 
+    //todo сменить на Lazy
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
     private List<Feature> features;

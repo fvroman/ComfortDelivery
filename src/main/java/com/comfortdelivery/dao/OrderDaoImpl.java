@@ -34,6 +34,7 @@ public class OrderDaoImpl implements OrderDao{
     @Override
     public void saveOrder(Order order) {
         Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(order.getCustomer());
         session.save(order);
     }
 
@@ -51,8 +52,9 @@ public class OrderDaoImpl implements OrderDao{
             orderedProducts.add(orderedProduct);
         }
         order.setOrderedProducts(orderedProducts);
-        order.setAddress("test");
         order.setCustomer(customer);
+        //todo redundant
+        order.setAddress(customer.getAddress());
         order.setOrderSum(orderedProducts.stream().mapToLong(o->o.getProduct().getPrice() * o.getQuantity()).sum());
         order.setOrderDate(new Date());
         order.setStatus(1);

@@ -9,17 +9,17 @@ public class ConnectionTester {
     public static void main(String[] args) {
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
         } catch (ClassNotFoundException e) {
 
-            System.out.println("Where is your Oracle JDBC Driver?");
+            System.out.println("Where is your MySQL JDBC Driver?");
             e.printStackTrace();
             return;
 
         }
 
-        System.out.println("Oracle JDBC Driver Registered!");
+        System.out.println("MySQL JDBC Driver Registered!");
 
         Connection connection = null;
 
@@ -28,7 +28,7 @@ public class ConnectionTester {
             //Locale.setDefault(Locale.ENGLISH);
 
             connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:xe", "ComfortDelivery", "12345123");
+                    "jdbc:mysql://localhost:3306/ComfortDelivery?useLegacyDatetimeCode=false&serverTimezone=GMT", "ComfortDelivery", "12345123");
 
         } catch (SQLException e) {
 

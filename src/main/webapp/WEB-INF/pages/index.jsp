@@ -24,7 +24,7 @@
                                    value="${pageContext.request.contextPath}/${category.categoryName}">
                             </c:url>
                             <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
-                                 width="100" height="180">
+                                 width="120" height="120">
                             <div class="category-list">
                                 <a href=${categoryUrl}>
                                     <h4>${category.categoryName}</h4>

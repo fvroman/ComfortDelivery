@@ -23,7 +23,7 @@ public class OrderBin {
         if (products == null) {
             products = new LinkedHashMap<>();
         }
-        products.merge(product, 1, (oldVal, newVal) -> oldVal + newVal);
+        products.merge(product, 1, (initialValue, term) -> initialValue + term);
     }
     //TODO SHIT CODE CHANGE
     public void remove(Product product) {
@@ -31,7 +31,7 @@ public class OrderBin {
     }
 
     public void decreaseAmount(Product product) {
-        products.merge(product, 1, (oldVal, newVal) ->  oldVal - newVal);
+        products.merge(product, 1, (initialValue, substracted) ->  initialValue - substracted);
         if (products.get(product) == 0) {
             remove(product);
         }

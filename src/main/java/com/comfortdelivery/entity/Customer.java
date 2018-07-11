@@ -32,10 +32,10 @@ public class Customer {
     private List<Order> orders;
 
     public Customer() {
-        this.setAddress("testAdr");
-        this.setEmail("testEM");
-        this.setFullName("testflnm");
-        this.setPhoneNumber("434343");
+        this.setAddress("Введите Адрес");
+        this.setEmail("Введите e-mail");
+        this.setFullName("Ваше ФИО");
+        this.setPhoneNumber("Ваш номер телефона");
         this.setVillage("chunoyar");
     }
 

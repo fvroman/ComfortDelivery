@@ -1,5 +1,7 @@
 package com.comfortdelivery.entity;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,7 +35,7 @@ public class Order {
     private String address;
 
     //todo Почему не работает выборкой? Тут явно не ALL
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
@@ -105,7 +107,7 @@ public class Order {
     }
 
     public String getStatusAsString() {
-        //Todo маппинг по сути, может какой-другой вариант есть?;
+        //Todo когда-нибудь
         return null;
     }
 

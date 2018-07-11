@@ -26,7 +26,7 @@
                     <input id = "max" type="number" value="${maxPrice}" min="0">
                 </div>
                 <hr>
-                <div class="brand-filter">
+                <div class="brand-filter" style="visibility: hidden">
                     <h4>Производители</h4>
                     <c:forEach begin="1" end="4">
                         <label><input type="checkbox">Samsung</label>
@@ -40,7 +40,7 @@
                     </c:url>
                     <div class="product-list-item">
                         <img src="../static/${product.imageLink}" alt="тест"
-                             width="100" height="180">
+                             width="120" height="120">
                         <div class="product-description">
                             <span class="product-title">${product.productName}</span>
                             <hr>
@@ -52,7 +52,7 @@
                         <a href="${addToBin}" class="add-to-bin-button">Заказать</a>
                     </div>
                 </c:forEach>
-/            </div>
+            </div>
         </form:form>
     </jsp:body>
 </t:generic-page>

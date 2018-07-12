@@ -14,6 +14,9 @@ public class Category {
     @Column(name = "category_seq")
     private long categorySeq;
 
+    @Column(name = "image_link")
+    private String imageLink;
+
     @OneToMany(mappedBy = "category",
                fetch = FetchType.EAGER,
                cascade = {CascadeType.PERSIST, CascadeType.MERGE,
@@ -36,4 +39,11 @@ public class Category {
         this.subcategories = subCategories;
     }
 
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
 }

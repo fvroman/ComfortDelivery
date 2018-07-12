@@ -32,14 +32,14 @@ public class ProductDaoImpl implements ProductDao{
 
     public List<Product> getProductsBySubcategory(String subcategory){
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Product where subcategory = :subcategory", Product.class);
+        Query query = session.createQuery("from Product where subcategory = :subcategory order by price", Product.class);
         query.setParameter("subcategory", subcategory);
         return query.getResultList();
     }
 
     public List<Product> searchProducts(String searchStr, Integer limit){
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Product where lower(productName) like :searchStr", Product.class);
+        Query query = session.createQuery("from Product where lower(productName) like :searchStr order by price", Product.class);
         query.setParameter("searchStr", "%" + searchStr.toLowerCase() + "%");
         if (limit != null) {
             query.setMaxResults(10);

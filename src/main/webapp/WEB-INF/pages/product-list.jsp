@@ -52,7 +52,23 @@
                         <a href="${addToBin}" class="add-to-bin-button">Заказать</a>
                     </div>
                 </c:forEach>
+                <div class="pagination">
+                    <c:forEach begin="1" end="${maxPage}" step="1" varStatus="i">
+                        <c:choose>
+                            <c:when test="${page == i.index || (page == null && i.index == 1) }">
+                                <span class="current-page">${i.index}</span>
+                            </c:when>
+                            <c:otherwise>
+                                <c:url value="${pageContext.request.contextPath}" var="url">
+                                    <c:param name="page" value="${i.index}"/>
+                                </c:url>
+                                <a href="${url}">${i.index}</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+                </div>
             </div>
+
         </form:form>
     </jsp:body>
 </t:generic-page>

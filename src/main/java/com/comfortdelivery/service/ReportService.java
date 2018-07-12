@@ -17,7 +17,7 @@ public class ReportService{
         File file = new File(path);
         try {
             file.createNewFile();
-            Writer writer = new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8); //the true will append the new data
+            Writer writer = new OutputStreamWriter(new FileOutputStream(path), StandardCharsets.UTF_8);
             generateHTML(writer, order, url);
             writer.close();
         } catch (IOException e) {

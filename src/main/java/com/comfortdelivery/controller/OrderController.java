@@ -73,6 +73,9 @@ public class OrderController {
     @GetMapping("/order")
     public String placeOrder(Model model) {
         Customer customer = new Customer();
+        if (orderBin.getProducts() == null || orderBin.getProducts().size() == 0) {
+            return "redirect:/";
+        }
         //todo получать кастомера из сессии (когда будет Security)
         model.addAttribute("customer", customer);
         model.addAttribute("villages", villages);

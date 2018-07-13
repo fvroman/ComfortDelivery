@@ -1,6 +1,7 @@
 package com.comfortdelivery.controller;
 
 import com.comfortdelivery.entity.Product;
+import com.comfortdelivery.filters.PriceFilter;
 import com.comfortdelivery.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
@@ -17,19 +18,28 @@ public class ProductController {
 
     private ProductService productService;
 
-    public static final int productsOnPage =20;
+    private static final int productsOnPage = 20;
 
     ProductController(@Autowired ProductService productService) {
         this.productService = productService;
     }
 
-    @GetMapping(path = "/{subcategory}")
-    public String getProductsBySubcategory(@PathVariable String subcategory, @RequestParam(required = false) Integer page, Model model) {
-        List<Product> products = productService.getProductsBySubcategory(subcategory);
-        int minPrice = productService.getMinimumPrice(products);
-        int maxPrice = productService.getMaximumPrice(products);
+    //todo фильтр
+    @RequestMapping(path = "/{subcategory}")
+    public String getProductsBySubcategory(@PathVariable String subcategory, @RequestParam(required = false) Integer page,
+                                           Model model) {
 
-        PagedListHolder<Product> pagedListHolder =new PagedListHolder<>(products);
+        List<Product> products;
+        int minPrice;
+        int maxPrice;
+
+
+        products = productService.getProductsBySubcategory(subcategory);
+        minPrice = productService.getMinimumPrice(products);
+        maxPrice = productService.getMaximumPrice(products);
+
+
+        PagedListHolder<Product> pagedListHolder = new PagedListHolder<>(products);
         pagedListHolder.setPageSize(productsOnPage);
 
         if (page == null || page < 1 || page > pagedListHolder.getPageCount()) {
@@ -45,12 +55,6 @@ public class ProductController {
         model.addAttribute("subcategoryName", subcategory);
         model.addAttribute("minPrice", minPrice);
         model.addAttribute("maxPrice", maxPrice);
-        return "product-list";
-    }
-
-    //todo filter
-    @GetMapping(path = "/{subcategory}/filter")
-    public String filterProducts(@PathVariable String subcategory, @RequestParam int min) {
         return "product-list";
     }
 

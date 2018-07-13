@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    //attach autocomplete
     $("#search").autocomplete({
         minLength: 1,
         delay: 500,

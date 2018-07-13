@@ -8,6 +8,7 @@
 <head>
     <title>Уют - доставка в п.Октябрьский и д.Чунояр</title>
     <meta name="yandex-verification" content="360ead2595e2a06a" />
+    <meta name="google-site-verification" content="uiGoDZszJ0ANuoz5kVCt1gETbCC4hzfUUcbxQT3raI0" />
 </head>
 <t:generic-page>
     <jsp:body>

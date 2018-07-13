@@ -3,12 +3,9 @@
 <t:generic-page>
         <t:search-and-order/>
         <div class="info-container">
-                <h3>HeeeeeeeeeeeeeeLLOOOOOO</h3>
+                <h3>${title}</h3>
                 <span>
-                        блаблааб балвлыалыва бвыбаыва бблабла бабвавыаыв fdksfkdsfs ;dl kflsfdslfdfl s
-                        fkdlfskldfksdl ksdlfk sldfksldk flsdkf ls;dfk lsdkf ldkfsdfsldfl ksdf
-                         sdfksdfksl kfsldfk ldskfldskf ldskf ldsfk dlsfk sldf oekoekfdsmckdmf dlfkdlfksfsf
-                        dfdfsdf kdlfkdslfks ldkf ldfkdfoek
+                        ${text}
                 </span>
         </div>
 </t:generic-page>

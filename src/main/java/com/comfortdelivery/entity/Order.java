@@ -34,7 +34,6 @@ public class Order {
     @Column(name = "delivery_address")
     private String address;
 
-    //todo Почему не работает выборкой? Тут явно не ALL
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "customer_id")
     private Customer customer;

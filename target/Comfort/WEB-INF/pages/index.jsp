@@ -7,6 +7,8 @@
 <html>
 <head>
     <title>Уют - доставка в п.Октябрьский и д.Чунояр</title>
+    <meta name="yandex-verification" content="360ead2595e2a06a" />
+    <meta name="google-site-verification" content="uiGoDZszJ0ANuoz5kVCt1gETbCC4hzfUUcbxQT3raI0" />
 </head>
 <t:generic-page>
     <jsp:body>
@@ -23,7 +25,7 @@
                             <c:url var="categoryUrl"
                                    value="${pageContext.request.contextPath}/${category.categoryName}">
                             </c:url>
-                            <img src="${pageContext.request.contextPath}/resources/images/sample.jpg" alt="тест"
+                            <img src="../static/${category.imageLink}" alt="тест"
                                  width="120" height="120">
                             <div class="category-list">
                                 <a href=${categoryUrl}>

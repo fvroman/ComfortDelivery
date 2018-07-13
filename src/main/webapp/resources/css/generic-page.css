@@ -331,3 +331,5 @@ hr {
     border: solid 1px;
     font-size:14px;
 }
+
+.ui-helper-hidden-accessible { display:none; }

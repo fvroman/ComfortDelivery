@@ -5,6 +5,7 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/product-list.css">
+<script src="${pageContext.request.contextPath}/resources/js/filters.js"></script>
 <html>
 <head>
     <title>Товары</title>
@@ -14,19 +15,16 @@
         <t:search-and-order/>
         <form:form method="get">
             <h3>${subcategoryName}</h3>
-            <c:url var="filter" value="${pageContext.request.contextPath}">
-                <c:param name="min" value="getMinVal()"/>
-            </c:url>
             <div class="filters-common">
                 <div class="price-filter">
                     <h4>Цена</h4>
                     От
-                    <input id = "min" type="number" value="${minPrice}" min="0">
+                    <input id = "minPrice" type="number" value="${minPrice}" min="0">
                     До
-                    <input id = "max" type="number" value="${maxPrice}" min="0">
+                    <input id = "maxPrice" type="number" value="${maxPrice}" min="0">
                 </div>
                 <hr>
-                <div class="brand-filter" style="visibility: hidden">
+                <div class="brand-filter" style="display:none">
                     <h4>Производители</h4>
                     <c:forEach begin="1" end="4">
                         <label><input type="checkbox">Samsung</label>
